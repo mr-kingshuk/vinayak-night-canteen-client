@@ -1,9 +1,10 @@
-function App() {
+import Login from "./pages/Login/Login.jsx";
 
+function App() {
   return (
-    <div>
-      Kingshuk 
-    </div>
+    <>
+      <Login /> 
+    </>
   )
 }
 
