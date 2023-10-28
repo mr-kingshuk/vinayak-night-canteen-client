@@ -19,7 +19,7 @@
     font-size: 30px;
     font-weight: 600;
     margin: 10px;
-
+    margin-bottom: 20px;
 }
 
 .conatiner .textbox{
@@ -30,6 +30,8 @@
     flex-direction: column;
     align-items: stretch;
     justify-content: center;
+
+    position: relative;
 }
 
 .error{
@@ -45,11 +47,16 @@ input{
     padding: 5px 8px;
     border-radius: 5px;
     border: 2px solid black;
+    outline: none;
 }
 
 input::placeholder{
-    font-weight: 400;
+    font-weight: 600;
     color: black;
+}
+
+.error_box{
+    border: 2px solid red;
 }
 
 .submit_btn{
@@ -61,6 +68,8 @@ input::placeholder{
     color: black;
     font-weight: 600;
     font-size: 15px;
+
+    cursor: pointer;
 }
 
 .forget_password{
@@ -68,6 +77,13 @@ input::placeholder{
     color: #e6312e;
     align-self: flex-end;
     font-size: 15px;
+}
+
+.password{
+    position: absolute;
+    right: 5%;
+    bottom: 33px;
+    height: 20px;
 }
 
 a{

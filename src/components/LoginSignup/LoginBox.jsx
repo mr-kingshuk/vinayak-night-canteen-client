@@ -7,12 +7,16 @@ import useLogin from '../../hooks/useLogin';
 const LoginBox = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const { login, error ,isLoading} = useLogin();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     await login(email, password);
-    console.log(error);
+  };
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
   };
 
   return (
@@ -29,18 +33,24 @@ const LoginBox = () => {
           type="email"
           onChange={(e) => setEmail(e.target.value)}
           value={email}
-          placeholder="Email" />
+          placeholder="Email" 
+          className={error && error.fields.includes("email") && styles.error_box} />
       </div>
       <div className={styles.textbox}>
       {
           error && error.fields.includes("password") && <div className={styles.error}>{error.message}</div> 
         }   
         <input
-          type="password"
+          type={showPassword ? 'text' : 'password'}
           onChange={(e) => setPassword(e.target.value)}
           value={password}
-          placeholder="Password" />
-        <div className={styles.forget_password}>Forget Password?</div>  
+          placeholder="Password" 
+          className={error && error.fields.includes("password") && styles.error_box}/>
+        <div className={styles.forget_password}>Forget Password?</div>
+        <img 
+          src={showPassword ? './hide.png' : './show.png'} 
+          alt="" onClick={togglePasswordVisibility} 
+          className={styles.password}/>
       </div>
       <button className={styles.submit_btn} disabled={isLoading}>Login</button>
       <Link to = '/signup'>Don’t have an account yet? Sign Up</Link>
