@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500&display=swap');
+
+.conatiner{
+    border: 2px solid black;
+    background-color:  whitesmoke;
+
+    width: 20%;
+    margin-top: 20px;
+    padding: 20px 0; 
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.conatiner h3{
+    font-size: 30px;
+    font-weight: 600;
+    margin: 10px;
+
+}
+
+.conatiner .textbox{
+    width: 85%;
+    margin-bottom: 25px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+}
+
+.error{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    color: #F00;
+    align-self: flex-start;
+    font-size: 15px;
+    padding:0 0 2px 5px;
+}
+
+input{
+    height: 40px;
+    padding: 5px 8px;
+    border-radius: 5px;
+    border: 2px solid black;
+}
+
+input::placeholder{
+    font-weight: 400;
+    color: black;
+}
+
+.submit_btn{
+    border-radius: 10px;
+    background: #00EA6C;
+    /* width: 50%; */
+
+    padding: 10px 30px;
+    color: black;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.forget_password{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    color: #e6312e;
+    align-self: flex-end;
+    font-size: 15px;
+}
+
+a{
+    font-size: 15px;
+    margin-top: 5px;
+    margin-bottom: 25px;
+}

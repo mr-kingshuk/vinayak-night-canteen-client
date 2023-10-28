@@ -1,10 +1,12 @@
 import styles from './Login.module.css';
-import LoginSignup from '../../components/LoginSignup/LoginSignup.jsx';
+import LoginBox from '../../components/LoginSignup/LoginBox';
 
 const Login = () => {
     return (
-        <div className={styles.background}>
-            <LoginSignup />
+        <div className={styles.container}>
+            <h1>Vinayak Night Canteen</h1>
+            <h2>The LNM Institute of Information Technology, Jaipur </h2>
+            <LoginBox />
         </div>
     )
 };
