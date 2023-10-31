@@ -2,6 +2,7 @@
     background:  url('./loginpage.png');
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: top center ;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
     height: 100vh;
@@ -18,4 +19,17 @@ h1{
     color: black;
     font-size: 45px;
     font-weight: 600;
+    text-align: center;
 }
+
+h2{
+    text-align: center;
+    margin: 0 30px;
+}
+
+
+@media only screen and (max-width: 550px) {
+    h2 {
+      display: none;
+    }
+  }

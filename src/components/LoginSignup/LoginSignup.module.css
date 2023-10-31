@@ -6,6 +6,7 @@
 
     width: 20%;
     margin-top: 20px;
+    margin-bottom: 50px;
     padding: 20px 0; 
     border-radius: 10px;
 
@@ -14,6 +15,30 @@
     align-items: center;
     justify-content: center;
 }
+
+@media only screen and (max-width: 1300px) {
+    .conatiner {
+      width: 35%;
+    }
+  }
+
+  @media only screen and (max-width: 850px) {
+    .conatiner {
+      width: 50%;
+    }
+  }
+  
+  @media only screen and (max-width: 560px) {
+    .conatiner {
+      width: 65%;
+    }
+  }  
+
+  @media only screen and (max-width: 460px) {
+    .conatiner {
+      width: 80%;
+    }
+  }    
 
 .conatiner h3{
     font-size: 30px;
@@ -79,15 +104,22 @@ input::placeholder{
     font-size: 15px;
 }
 
-.password{
+.password, .signup_password{
     position: absolute;
     right: 5%;
     bottom: 33px;
     height: 20px;
 }
 
+.signup_password{
+    bottom: 12px;
+}
+
 a{
     font-size: 15px;
     margin-top: 5px;
     margin-bottom: 25px;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 600;
+    color: #0046FB;
 }

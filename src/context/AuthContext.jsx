@@ -4,22 +4,26 @@ export const AuthContext = createContext();
 
 const ACTIONS = {
     'LOGIN': 'login',
-    'LOGOUT': 'logout'
+    'LOGOUT': 'logout',
+    'UPDATE' : 'update'
 }
 
 const authReducer = (state, action) => {
     switch(action.type){
         case ACTIONS.LOGIN:
-            return { user : action.payload };
+            return { user : action.payload,  };
         case ACTIONS.LOGOUT:         
-            return { user : null }
+            return { user : null, userDetails : null }
+        case ACTIONS.UPDATE:
+            return state;    
         default: return state;
     }
 }
 
 export const AuthContextProvider = ({ children }) => {
     const [state, dispatch] = useReducer(authReducer, {
-        user: null
+        user: null,
+        userDetails : null
     });
 
     //empty dependency array so, it renders only once.
