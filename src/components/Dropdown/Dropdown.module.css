@@ -1,0 +1,59 @@
+.dropdown{
+    position: absolute;
+    top: calc( 100% + 7px );
+    right: 0;
+
+    width: 100%;
+    padding: 5px 0 8px 0;
+    
+    border: 2px solid black;
+    border-radius: 15px;
+    background-color: white;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    display: none;
+}
+
+.open{
+    display: flex;
+}
+
+.dropdown >*{
+    border-bottom: 2px solid black;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0 15px;
+    padding: 8px 0;
+
+}
+
+.dropdown div :hover{
+    font-weight: 600;
+    color: #00A36C;
+    cursor: pointer;
+}
+
+.dropdown div:last-child{
+    border: none;
+}
+
+.inactive, .active{
+    text-align: center;
+    font-weight: 600;
+    text-decoration: none;
+    color: black;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.active{
+    font-weight: 600;
+    color:#00A36C;
+}

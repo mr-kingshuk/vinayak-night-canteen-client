@@ -1,0 +1,15 @@
+.admin_navbar{
+    background: #0077b6;
+    padding: 10px 20px;
+    height: 6vh;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.admin_navbar a{
+    text-decoration: none;
+    color: white;
+    margin: 0;
+}

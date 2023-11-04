@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Signup.module.css';
+import styles from './Login.module.css';
 
 import SignupBox from '../../components/LoginSignup/SignupBox';
 

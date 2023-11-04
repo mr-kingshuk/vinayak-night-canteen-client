@@ -27,10 +27,11 @@ const useSignup = (email, password, reEnterPassword, name) => {
             const json = await response.json();
 
             //save the user to localStorage
-            localStorage.setItem('user', JSON.stringify(json));
+            localStorage.setItem('user', JSON.stringify(json.user));
+            localStorage.setItem('userDetails', JSON.stringify(json.userDetails));
 
             //update the AuthContext
-            dispatch({type : "login", payload : json });
+            dispatch({type : "signup", payload : json });
 
             setIsLoading(false);
         }

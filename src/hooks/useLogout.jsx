@@ -1,9 +1,9 @@
 import { useAuthContext } from './useAuthContext';
-import { useWorkoutContext } from './useWorkoutContext';
+// import { useWorkoutContext } from './useWorkoutContext';
 
 const useLogout = () => {
     const { dispatch } = useAuthContext();
-    const { dispatch : dispatch_workout} = useWorkoutContext();
+    // const { dispatch : dispatch_workout} = useWorkoutContext();
 
     const logout = () => {
         //remove user from loaclStorage
@@ -13,7 +13,7 @@ const useLogout = () => {
         dispatch({type: 'logout'});
 
         //clearing the workout Global state
-        dispatch_workout({type: 'setWorkouts', payload: null});
+        // dispatch_workout({type: 'setWorkouts', payload: null});
     }
     return logout;
 }

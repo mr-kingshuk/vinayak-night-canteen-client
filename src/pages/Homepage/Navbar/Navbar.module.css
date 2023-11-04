@@ -2,21 +2,6 @@
     width: 100%;
 }
 
-.admin_navbar{
-    background: #0077b6;
-    padding: 10px 20px;
-
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-.admin_navbar a{
-    text-decoration: none;
-    color: white;
-    margin: 0;
-}
-
 .navbar{
     background: #00EA6C;
     padding: 10px 40px;
@@ -57,11 +42,14 @@
     border: 2px solid #000;
     background: #FFF;
     padding: 10px 20px;
+    min-width: 13%;
 
     display : flex;
     justify-content: center;
     align-items: center; 
     gap: 10px;
+
+    position: relative;
 
     cursor: pointer;
 }

@@ -1,0 +1,50 @@
+.container{
+    width: 17vw;
+    height: 100vh;
+    border: 2px solid grey;
+}
+
+.option{
+    border-top: 2px solid grey;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.heading{
+    font-size: 35px;
+    font-weight: 600;
+    text-align: center;
+    padding: 15px 0;
+}
+
+.option:last-child{
+    border-bottom: 2px solid #939393;
+}
+
+.option:hover a{
+    cursor: pointer;
+    font-weight: 600;
+    background: #00EA6C;
+}
+
+.inactive, .active{
+    text-align: center;
+    font-weight: 400;
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+
+    margin: 0;
+    padding: 10px 0;
+
+    width: 100%;
+    height: 100%;
+}
+
+.active{
+    font-weight: 600;
+    background: #00EA6C;
+}
