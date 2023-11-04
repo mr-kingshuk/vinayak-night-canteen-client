@@ -31,14 +31,24 @@ const ProtectingRouteMerchant = ({ component }) => {
         }
     });
 
-    const style ={
+    const style = {
         display: "flex",
         justifyContent: "center",
         alignItems: "stretch"
     }
 
+    const routing = {
+        type: "Merchant",
+        routes: [
+            { key: 1, route: "/merchant/orders", name: "Order Details" },
+            { key: 2, route: "/merchant/workers", name: "Worker IDs" },
+            { key: 3, route: "/merchant/delete_orders", name: "Delete Orders" },
+            { key: 4, route: "/merchant/items_category", name: "Items and Category" }
+        ]
+    }
+
     if (isMerchant)
-        return <div style={style}><AdminSidebar />{component}</div>;
+        return <div style={style}><AdminSidebar routing={routing} />{component}</div>;
     else
         return (<h1>404 NOT FOUND</h1>);
 }

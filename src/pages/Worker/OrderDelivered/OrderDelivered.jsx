@@ -3,7 +3,7 @@ import styles from './OrderDelivered.module.css';
 
 const OrderDelivered = () => {
   return (
-    <div>OrderDelivered</div>
+    <div className={styles.container}>OrderDelivered</div>
   )
 };
 

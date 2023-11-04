@@ -3,7 +3,7 @@ import styles from './ItemOff.module.css';
 
 const ItemOff = () => {
   return (
-    <div>ItemOff</div>
+    <div className={styles.container}>ItemOff</div>
   )
 };
 
