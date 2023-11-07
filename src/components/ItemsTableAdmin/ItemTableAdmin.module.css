@@ -1,0 +1,99 @@
+.container{
+    width: 80%;
+    margin: auto;
+}
+
+.category .heading{
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 10px 15px;
+}
+
+.category .heading h2{
+    font-size: 25px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.delete_btn, .submit_btn{
+    border: 2px solid black;
+    padding: 5px 8px;
+    border-radius: 5px;
+    background: red;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.submit_btn{
+    padding: 5px 15px;
+    background: rgb(60, 255, 60);
+    color: black;
+}
+
+.items{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.error{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    color: #F00;
+    font-size: 15px;
+    padding:0 0 2px 5px;
+}
+
+.error_box{
+    border: 2px solid red;
+}
+
+.box{
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 10px 15px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 48.5%;
+}
+
+.box .name{
+    font-weight: 600;
+}
+
+.box .price{
+    font-weight: 400;
+}
+
+.price_delete{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.add_item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.fields{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.fields input{
+    width: 45%;
+}
