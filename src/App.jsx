@@ -17,13 +17,12 @@ import WorkerDetails from './pages/Merchant/WorkerDetails/WorkerDetails.jsx';
 
 //Worker Components
 import ItemOff from './pages/Worker/ItemOff/ItemOff.jsx';
-import OrdersDelivered from './pages/Worker/OrderDelivered/OrderDelivered.jsx';
-import OrdersReceived from './pages/Worker/OrderReceived/OrderReceived.jsx';
+import OrderReceived from './pages/Worker/OrderReceived/OrderReceived.jsx';
 
+import ProtectingRouteWorker from './protectedRoutes/ProtectingRouteWorker.jsx';
 import ProtectingRouteUser from './protectedRoutes/ProtectingRouteUser.jsx';
 import ProtectingRouteGuest from './protectedRoutes/ProtectingRouteGuest.jsx';
 import ProtectingRouteMerchant from './protectedRoutes/ProtectingRouteMerchant.jsx';
-import OrderReceived from './pages/Worker/OrderReceived/OrderReceived.jsx';
 
 function App() {
 
@@ -66,15 +65,12 @@ function App() {
           element={<ProtectingRouteMerchant component={<WorkerDetails />} />} />
 
         {/* Worker Routes */}
-        {/* <Route
-          path='/workers'
+        <Route
+          path='/workers/items'
           element={<ProtectingRouteWorker component={<ItemOff />} />} />
         <Route
           path='/workers/received'
           element={<ProtectingRouteWorker component={<OrderReceived />} />} />
-        <Route
-          path='/workers/delivered'
-          element={<ProtectingRouteWorker component={<OrdersDelivered />} />} />             */}
 
         <Route path="*" element={<h1>404 NOT FOUND</h1>}/>
 
@@ -84,16 +80,3 @@ function App() {
 }
 
 export default App;
-
-/***
- * <Link to="/orders/${}"
- * <Route path="/order/:orderId" component={<ProtectingRoute component={Homepage}/>}/>
- * 
- * const ProtectingRoute({component}) => {
- *  if() {
- *  return component
- * }
- * return <Login/>
- *   }
- * 
- */

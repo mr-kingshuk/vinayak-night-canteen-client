@@ -5,9 +5,8 @@ import styles from './AdminNavbar.module.css';
 const AdminNavbar = ({ token }) => {
   const [isMerchant, setIsMerchant] = useState(null);
   const [isWorker, setIsWorker] = useState(null);
-  console.log(token);
   useEffect(() => {
-    const checkAdmin = async () => {
+    const checkSuperAdmin = async () => {
       const response = await fetch('http://localhost:3000/api/isMerchant', {
         method: 'GET',
         headers: {
@@ -23,6 +22,26 @@ const AdminNavbar = ({ token }) => {
         setIsMerchant(false);
       }
     }
+
+    checkSuperAdmin();
+
+    const checkAdmin = async () => {
+      const response = await fetch('http://localhost:3000/api/isWorker', {
+        method: 'GET',
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      });
+
+      if (response.ok) {
+        const json = await response.json();
+        setIsWorker(true);
+      }
+      else {
+        setIsWorker(false);
+      }
+    }
+
     checkAdmin();
   }, [])
 
@@ -36,7 +55,7 @@ const AdminNavbar = ({ token }) => {
   else if(isWorker){
     return (
       <div className={styles.admin_navbar}>
-        <Link to="/worker">--&gt; Go to Worker Admin Page</Link>
+        <Link to="/workers/items">--&gt; Go to Worker Admin Page</Link>
       </div>
     )
   }
