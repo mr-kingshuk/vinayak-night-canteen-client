@@ -1,0 +1,54 @@
+.box{
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 10px 15px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+    width: 49%;
+}
+
+.box .name{
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.box .price{
+    font-weight: 400;
+    font-size: 15px;
+    padding: 5px ;
+}
+
+.submit_btn{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: stretch;
+    width: 75px;
+    border: 2px solid black;
+    border-radius: 5px;
+    background: rgb(60, 255, 60);
+    color: black;
+    font-weight: 600;
+}
+
+.submit_btn div{
+    width: 100%;
+    padding: 5px;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 950px) {
+    .box{
+        width: 47%;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .box{
+        width: 97%;
+    }
+}

@@ -25,7 +25,7 @@ const Navbar = () => {
 
   if (user) {
     return (
-      <div className={styles.conatiner}>
+      <div className={styles.container}>
         <AdminNavbar token={user.token} />
         <div className={styles.navbar}>
           <div className={styles.logo_number}>

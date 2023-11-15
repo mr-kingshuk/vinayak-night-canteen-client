@@ -8,6 +8,7 @@ const useLogout = () => {
     const logout = () => {
         //remove user from loaclStorage
         localStorage.removeItem('user');
+        localStorage.removeItem('userDetails');
 
         //dispatch logout action
         dispatch({type: 'logout'});

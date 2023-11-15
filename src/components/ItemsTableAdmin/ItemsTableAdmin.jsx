@@ -31,8 +31,6 @@ const ItemsTableAdmin = ({ itemsCat }) => {
         }
     };
 
-    
-
     if (items && items.category.length > 0) {
         return (
             <div className={styles.container}>
@@ -47,7 +45,7 @@ const ItemsTableAdmin = ({ itemsCat }) => {
                             {items.items.filter((itemGroup) => itemGroup.categoryId === category._id)
                                 .map((itemGroup) => <ItemTableItem foodItems={{ items, setItems }} itemGroup={itemGroup} />)
                             }
-                            <ItemAdd itemsCat = {{ items, setItems }} categoryId={category._id} />
+                            <ItemAdd itemsCat={{ items, setItems }} categoryId={category._id} />
                         </div>
                     </div>
                 )}
