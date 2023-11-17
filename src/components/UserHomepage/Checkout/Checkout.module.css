@@ -1,0 +1,39 @@
+.outer{
+    position: relative;
+    z-index: 13;
+    box-shadow: 0 -5px 3px -3px #00000030;
+    border-top: 2px solid  lightgray;
+    background: white;
+    
+    width: 100%;
+    padding: 20px 40px;
+}
+
+.heading{
+    font-size: 25px;
+    font-weight: 600;
+    margin-left: 5px;
+}
+
+hr{
+    height: 2px;
+    margin: 7px 0;
+    background: grey;
+}
+
+.table{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    gap: 10px;
+    padding: 0 5px;
+}
+
+@media screen and (max-width: 680px) {
+    .outer{
+        padding: 20px;
+    }
+    .heading{
+        font-size: 22px;
+    }
+}

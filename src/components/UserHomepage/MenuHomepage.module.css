@@ -1,10 +1,12 @@
 .outer{
     display: flex;
+    position: relative;
 }
 
 .outer aside{
     width: 13%;
     position: fixed;
+    z-index: 20;
     height: 100%;
     box-shadow: 5px 0 3px -3px rgb(179, 179, 179);
     padding-top: 15px ;
@@ -47,12 +49,13 @@ aside .categories .category_item a{
 
 .catgeory_btn{
     position: fixed;
-    bottom: 100px;
+    z-index: 10;
+    bottom: 90px;
     right: 30px;
     width: 60px;
     height: 60px;
     border-radius: 50%;
-
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     background: #00EA6C;
     display: none;
 }
@@ -182,11 +185,11 @@ input::placeholder{
         width: 40vw;
         background: white;
         position: fixed;
-        right: 35px;
+        right: 30px;
+        bottom: 155px;
         height: fit-content;
         border-radius: 10px;
         border: 2px solid black;
-        bottom: 170px;
         box-shadow: 5px 0 3px -3px rgb(179, 179, 179);
         padding: 10px;
 

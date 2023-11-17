@@ -1,0 +1,70 @@
+.outer{
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    z-index: 30;
+    width: 30vw; 
+    transform: translate(-50%);
+    background: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 2px solid black;
+}
+
+.outer .heading{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    height: fit-content;
+    padding: 0;
+}
+
+.outer .heading h1{
+    height: 100%;
+    font-size: 25px;
+    padding: 0;
+    margin: 0;
+}
+
+.outer .heading .close_btn{
+    height: 30px;
+}
+
+.outer .heading .close_btn img{
+    height: 100%;
+}
+
+hr{
+    height: 2px;
+    background: lightgray;
+}
+
+.outer .message{
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.btn{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.btn .approve, .btn .update{
+    border: 2px solid black;
+    padding: 8px 15px;
+    border-radius: 5px;
+    color: black;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.btn .approve{
+    background: #00EA6C;
+}
+
+.btn .update{
+    background: #FFA500;
+}

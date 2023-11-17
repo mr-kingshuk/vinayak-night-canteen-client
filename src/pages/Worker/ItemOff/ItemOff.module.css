@@ -2,3 +2,76 @@
     width: 83vw;
     min-height: 100vh;
 }
+
+.heading{
+    padding: 25px 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.heading h1{
+    font-size: 40px;
+}
+
+.heading .form{
+    width: 30%;
+    height: 60px;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.heading .form input{
+    height:50px;
+    border-radius: 8px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border: 2px solid black;
+    outline: none;
+    font-weight: 600;
+    color: black;
+}
+
+input::placeholder{
+    font-weight: 600;
+    color: black;
+}
+
+.heading .form .cross{
+    background: #00EA6C;
+    font-weight: 400;
+    font-size: 25px;
+    height: 50px;
+    aspect-ratio: 1/1;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 2px solid black;
+    border-left: none;
+    border-radius: 8px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+
+}
+
+.heading .form .cross img{
+    width: 100%;
+    aspect-ratio: 1/1;
+    cursor: pointer;
+}
+
+.items{
+    padding: 50px 100px;
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}

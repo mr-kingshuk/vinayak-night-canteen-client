@@ -3,17 +3,18 @@ import { Link } from 'react-scroll';
 
 import ItemsBox from './ItemBox/ItemsBox.jsx';
 import OrderSummary from './OrderSummary/OrderSummary.jsx';
+import CheckoutModal from './CheckoutModal/CheckoutModal.jsx';
 import styles from './MenuHomepage.module.css';
 
 
 const ItemsCategory = ({ items }) => {
-    const [search, setSearch] = useState('');
     const modalRef = useRef();
     const iconRef = useRef();
+    const [search, setSearch] = useState('');
     const [queryItems, setQueryItems] = useState(items.items);
     const [activeCategory, setActiveCategory] = useState(items.category[0]._id);
     const [modalOpen, setModalOpen] = useState(false);
-
+    const [checkoutModal, setCheckoutModal] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -62,13 +63,14 @@ const ItemsCategory = ({ items }) => {
 
     return (
         <div className={styles.outer}>
+            {checkoutModal && <CheckoutModal setCheckoutModal={setCheckoutModal} />}
             <aside className={modalOpen ? styles.open : null} ref={modalRef}>
                 <div className={styles.categories}>
                     {
                         items.category.map((category) => {
                             if (queryItems.some((item) => item.categoryId === category._id))
                                 return (
-                                    <div className={`${styles.category_item} ${activeCategory === category._id ? styles.active : ''}`}>
+                                    <div className={`${styles.category_item} ${activeCategory === category._id ? styles.active : ''}`} key={category._id}>
                                         <Link
                                             to={category.name}
                                             smooth={true}
@@ -112,7 +114,7 @@ const ItemsCategory = ({ items }) => {
                                     <hr />
                                     <div className={styles.items}>
                                         {queryItems.filter((itemGroup) => itemGroup.categoryId === category._id)
-                                            .map((itemGroup) => <ItemsBox itemGroup={itemGroup} />)
+                                            .map((itemGroup) => <ItemsBox itemGroup={itemGroup} key={itemGroup._id} />)
                                         }
                                     </div>
                                 </div>
@@ -125,7 +127,7 @@ const ItemsCategory = ({ items }) => {
                     <img src="./category.png" alt="category button" />
                 </div>
             </main>
-            <OrderSummary />
+            <OrderSummary setCheckoutModal={setCheckoutModal}/>
         </div>
     )
 

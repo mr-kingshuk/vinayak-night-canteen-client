@@ -6,7 +6,8 @@ const ACTIONS = {
     'ADD': 'add',
     'INCREMENT': 'increment',
     'DECREMENT': 'decrement',
-    'REMOVE': 'remove'
+    'REMOVE': 'remove', 
+    'REMOVE_SINGLE' : 'remove_single'
 }
 
 const orderReducer = (state, action) => {
@@ -42,6 +43,14 @@ const orderReducer = (state, action) => {
             return state;
         case ACTIONS.REMOVE:
             return { orderItems: [] };
+        case ACTIONS.REMOVE_SINGLE:
+            const index = orderItems.findIndex(element => element._id === payload._id);
+            if (index !== -1) {
+                orderItems.splice(index, 1);
+                localStorage.setItem('order', JSON.stringify(orderItems));
+                return { ...state, orderItems: [...orderItems] };
+            }
+            return state;
         default:
             return state;
     }

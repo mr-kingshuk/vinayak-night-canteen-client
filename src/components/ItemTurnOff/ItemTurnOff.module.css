@@ -1,0 +1,33 @@
+.container{
+    border: 2px solid black;
+    border: 2px solid black;
+    padding: 10px;
+    flex: 30%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.conatiner .name{
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.container .btn{
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 2px 8px;
+    cursor: pointer;
+
+}
+
+.container .on{
+    background: #00EA6C;
+    color: black;
+}
+
+.container .off{
+    background: red;
+    color: white;
+}

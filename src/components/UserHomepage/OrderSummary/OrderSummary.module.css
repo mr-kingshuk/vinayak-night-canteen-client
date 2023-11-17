@@ -1,28 +1,29 @@
 .order_summary{
-    /* height: 10vh; */
     width: 87%;
-    background-color: white;
-    box-shadow: inset rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    border-top: 2px solid  lightgray;
-    border-left: 2px solid lightgray;
-    box-shadow: 0 -5px 3px -3px #00000030;
     margin-left: 13%;
-
-    padding: 10px 35px;
+    background-color: white;
 
     position: fixed;
     bottom: 0;
     left: 0;
+    z-index: 11;
+}
+
+.semi_details{
+    box-shadow: 0 -5px 3px -3px #00000030;
+    border-top: 2px solid  lightgray;
+    position: relative;
+    z-index: 4;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 10px 35px;
 }
 
 .order_summary .details .price{
     font-size: 35px;
     font-weight: 600;
-    margin-bottom: 5px ;
 }
 
 .order_summary .details .additional{
@@ -40,6 +41,7 @@
     background: #00EA6C;
     border-radius: 5px;
     margin-top: 10px;
+    cursor: pointer;
 
     font-size: 25px;
     font-weight: 600;
@@ -68,5 +70,32 @@
     .order_summary{
         width: 100%;
         margin: 0;
+        
     }
+
+    .semi_details{
+        padding: 15px 20px;
+    }
+
+
+    .order_summary .details .price{
+        font-size: 22px;
+    }
+
+    .order_summary .details .additional{
+        font-size: 10px;
+    }
+
+    .order_summary .summary_btn{
+        font-size: 15px;
+        padding: 5px 10px;
+    }
+
+    .order_summary .items{
+        font-size: 10px;
+        width: 20px;
+        top: -2px;
+        right: -5px;
+    }
+
 }
