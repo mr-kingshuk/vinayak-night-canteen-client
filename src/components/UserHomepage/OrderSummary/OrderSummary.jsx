@@ -30,11 +30,6 @@ const OrderSummary = ({setCheckoutModal}) => {
         return () => document.removeEventListener("mousedown", handler);
     });
 
-    const handleCheckout = () => {
-        console.log(orderItems);
-
-    };
-
 
     if (orderItems.length > 0)
         return (

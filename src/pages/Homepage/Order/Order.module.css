@@ -1,0 +1,132 @@
+.outerBox{
+    min-height: 84vh;
+    position: relative;
+}
+
+.outer{
+    width: 90vw;
+    margin: auto;
+    margin-bottom: 50px;
+}
+
+.outer h1{
+    font-size: 40px;
+    margin-bottom: 15px; 
+}
+
+.outer div{
+    font-size: 16px;
+}
+
+.container div, .hostelAddress {
+    font-size: 18px;
+}
+
+.container, .container2, .container3, .container4{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 5px;
+}
+
+.container4{
+    padding: 0 5px;
+}
+
+.container2{
+    padding: 0;
+}
+
+.container3 div{
+    font-size: 25px;
+    font-weight: 600;
+}
+
+
+.date, .time{
+    font-weight: 600;
+}
+
+.orderStatus{
+    font-weight: 600;
+}
+
+.hostelAddress{
+    text-align: center;
+    margin: 10px auto;
+}
+
+.table{
+    margin-top: 15px;
+}
+
+.header, .row{
+    display: flex;
+    justify-content: stretch;
+    align-items: center;
+
+    padding: 5px;
+}
+
+.header div{
+    text-align: center;
+    font-weight: 600;
+}
+
+.row div{
+    text-align: center;
+}
+
+.id{
+    flex: 1 0 20%;
+
+}
+
+.name{
+    flex: 2 0 35%;
+}
+
+.quantity{
+    flex: 1 0 20%;
+}
+
+.price{
+    flex: 2 0 30%;
+}
+
+.header{
+    font-weight: 600;
+}
+
+@media only screen and (min-width: 700px) {
+    .outer{
+        width: 65vw;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .outer{
+        width: 45vw;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .container4{
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .hostelAddress{
+        order: 4;
+        flex: 1 0 40%;
+    }
+
+    .time, .date{
+        flex: 1 0 45%;
+    }
+
+    .time{
+        text-align: end;
+    }
+}

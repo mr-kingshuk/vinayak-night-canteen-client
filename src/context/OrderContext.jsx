@@ -7,7 +7,7 @@ const ACTIONS = {
     'INCREMENT': 'increment',
     'DECREMENT': 'decrement',
     'REMOVE': 'remove', 
-    'REMOVE_SINGLE' : 'remove_single'
+    'REMOVE_SINGLE' : 'remove_single',
 }
 
 const orderReducer = (state, action) => {

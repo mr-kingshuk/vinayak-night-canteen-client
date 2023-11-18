@@ -1,4 +1,4 @@
-import React, { useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './ItemOff.module.css';
 
 import ItemTurnOff from '../../../components/ItemTurnOff/ItemTurnOff.jsx';
@@ -20,7 +20,7 @@ const ItemOff = () => {
       })
       if (response.ok) {
         const json = await response.json();
-        setItems(json.items);
+        setItems(json);
         setQueryItems(json.items);
       }
       else {
@@ -33,26 +33,48 @@ const ItemOff = () => {
 
   const searchList = (search) => {
     setSearch(search);
-    const newList = items.filter((item) => search.toLowerCase() === '' ? item : item.name.toLowerCase().includes(search));
+    const newList = items.items.filter((item) => search.toLowerCase() === '' ? item : item.name.toLowerCase().includes(search));
+    console.log(newList);
     setQueryItems(newList);
-}
-  
+  }
+
   return (
-    <div className={styles.container}>
+    <div className={styles.outer}>
       <div className={styles.heading}>
         <h1>Turn Off Items</h1>
         <div className={styles.form}>
-            <input
-              type="text"
-              onChange={(e) => setSearch(e.target.value)}
-              value={search}
-              placeholder="Item Name"
-            />
+          <input
+            type="text"
+            onChange={(e) => searchList(e.target.value)}
+            value={search}
+            placeholder="Item Name"
+          />
           <div className={styles.cross} onClick={() => searchList('')}>X</div>
         </div>
       </div>
       <div className={styles.items}>
-        {queryItems.length > 0 ? queryItems.map((item) => <ItemTurnOff key={item._id} item={item}/> ):  <div>No Items Found!!</div>}
+        {queryItems.length > 0 ? <div className={styles.container}>
+          {items.category.map((category) => {
+            if (queryItems.some((item) => item.categoryId === category._id))
+              return (
+                <div
+                  className={styles.category}
+                  key={category._id}
+                  data-category={category._id}>
+                  <div className={styles.head} id={category.name} name={category.name}>
+                    <h2>{category.name}</h2>
+                  </div>
+                  <hr />
+                  <div className={styles.item}>
+                    {queryItems.filter((itemGroup) => itemGroup.categoryId === category._id)
+                      .map((itemGroup) => <ItemTurnOff item={itemGroup} key={itemGroup._id} />)
+                    }
+                  </div>
+                </div>
+              )
+          }
+          )}
+        </div> : <div className={styles.no_items}> No Items Found.</div>}
       </div>
     </div>
   )

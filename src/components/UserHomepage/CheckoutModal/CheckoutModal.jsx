@@ -1,17 +1,48 @@
-import React, { useEffect, useRef} from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './CheckoutModal.module.css';
 
-import { useAuthContext } from '../../../hooks/useAuthContext';
+import { useAuthContext } from '../../../hooks/useAuthContext.jsx';
+import { useOrderContext } from '../../../hooks/useOrderContext.jsx' 
 
 const CheckoutModal = ({ setCheckoutModal }) => {
     const navigate = useNavigate();
     const modalRef = useRef();
-    const { userDetails } = useAuthContext();
+    const { user, userDetails } = useAuthContext();
+    const { orderItems, dispatch } = useOrderContext();
 
-    const handleSubmit = () => {
+    const handleSubmit = async () => {
         setCheckoutModal(false);
-        console.log("form submitted");
+        let body = [];
+        let itemInfo;
+        orderItems.map((item) => {
+            console.log(item);
+            itemInfo = { _id: item._id, name : item.name, price: item.price, quantity : item.quantity};
+            body.push(itemInfo);
+        });
+        const order = {order : body};
+        console.log(order);
+
+        const response = await fetch("http://localhost:3000/api/orders", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${user.token}`
+            },
+            body: JSON.stringify(order)
+        });
+
+        if (response.ok) {
+            const json = await response.json();
+            dispatch({ type: "remove" });
+            localStorage.removeItem('order');
+            navigate(`/${json._id}`);
+        }
+        else {
+            const errorData = await response.json();
+            alert(errorData.err);
+            window.location.reload();
+        }
     };
 
     const handleUpdate = () => {
@@ -21,13 +52,13 @@ const CheckoutModal = ({ setCheckoutModal }) => {
 
     useEffect(() => {
         const handler = (event) => {
-          if (!modalRef.current.contains(event.target))
-            setCheckoutModal(false);
+            if (!modalRef.current.contains(event.target))
+                setCheckoutModal(false);
         };
-    
+
         document.addEventListener("mousedown", handler);
         return () => document.removeEventListener("mousedown", handler);
-      });
+    });
 
     return (
         <div className={styles.outer} ref={modalRef}>

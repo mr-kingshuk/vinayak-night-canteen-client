@@ -5,7 +5,7 @@ import { useOrderContext } from '../../../hooks/useOrderContext.jsx';
 import CheckoutItem from './CheckoutItem/CheckoutItem.jsx';
 
 const Checkout = () => {
-    const { orderItems } = useOrderContext();
+    const { orderItems, error } = useOrderContext();
     return (
         <div className={styles.outer}>
             <div className={styles.heading}>Your Order Summary:</div>

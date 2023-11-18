@@ -1,0 +1,112 @@
+.outer{
+    width: 60vw;
+    margin: auto;
+    position: relative;
+    margin-bottom: 50px;
+}
+
+@media only screen and (max-width: 1350px) {
+    .outer{
+    width: 80vw;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+    .outer{
+    width: 90vw;
+  }
+}
+
+.outer h1{
+    margin-bottom: 20px;
+
+}
+
+.table{
+    display: flex;
+    flex-direction: column;
+    gap: 10p
+}
+
+.table .header{
+    font-weight: 600; 
+}
+
+.table .header, .table .rows{
+    display: flex;
+    justify-content: stretch;
+    align-items: center;
+    gap: 5px;
+    border-radius: 5px;
+
+}
+
+.table .rows:hover{
+    background: #d3d3d3;
+    cursor: pointer
+}
+
+
+.id{
+    flex: 1;
+    font-weight: 600;
+    text-align: center;
+    padding: 10px;
+    font-size: 17px;
+}
+
+.date{
+    flex: 3;
+    text-align: center;
+    padding: 10px;
+    font-size: 17px;
+}
+
+.time{
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    font-size: 17px;
+}
+
+.hostel{
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    font-size: 17px;
+}
+
+.status{
+    flex: 2;
+    font-weight: 600;
+    text-align: center;
+    padding: 10px;
+    font-size: 17px;
+}
+
+.btn{
+    flex: 2;
+    text-align: center;
+    padding: 10px;
+    font-size: 17px;
+}
+
+@media only screen and (max-width: 650px) {
+    .status, .btn, .hostel{
+    display: none;
+  }
+
+    .id{
+        padding: 0;
+    flex: 1 0 20%;
+  }
+
+  .date{
+    flex: 1 0 40%;
+  }
+
+  .time{
+    flex: 1 0 25%;
+  }
+
+}

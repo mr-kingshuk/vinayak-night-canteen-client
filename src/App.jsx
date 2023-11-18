@@ -41,7 +41,7 @@ function App() {
           path='/'
           element={<ProtectingRouteUser component={<Menu />} />} />
         <Route
-          path='/order/:id'
+          path='/:id'
           element={<ProtectingRouteUser component={<Order />}/>} />
         <Route
           path='/orders'

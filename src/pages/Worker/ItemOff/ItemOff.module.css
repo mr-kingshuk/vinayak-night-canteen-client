@@ -1,10 +1,11 @@
-.container{
+.outer{
     width: 83vw;
     min-height: 100vh;
 }
 
 .heading{
-    padding: 25px 35px;
+    margin: 25px 100px;
+    margin-bottom: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -65,6 +66,24 @@ input::placeholder{
     cursor: pointer;
 }
 
+.container{
+    width: 95%;
+    margin: auto;
+    padding-bottom: 10vh;
+}
+
+.category .head{
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 5px;
+}
+
+.category .head h2{
+    font-size: 20px;
+    font-weight: 600;
+}
+
 .items{
     padding: 50px 100px;
 
@@ -74,4 +93,24 @@ input::placeholder{
     justify-content: center;
     align-items: center;
     gap: 12px;
+}
+
+.item{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 15px;
+    padding: 10px 5px;
+}
+
+.no_items{
+    padding-top: 65px;
+
+    font-size: 35px;
+    font-weight: 400;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

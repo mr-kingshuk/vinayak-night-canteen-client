@@ -6,7 +6,6 @@ import OrderSummary from './OrderSummary/OrderSummary.jsx';
 import CheckoutModal from './CheckoutModal/CheckoutModal.jsx';
 import styles from './MenuHomepage.module.css';
 
-
 const ItemsCategory = ({ items }) => {
     const modalRef = useRef();
     const iconRef = useRef();

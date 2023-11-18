@@ -3,6 +3,7 @@ import styles from './UpdateProfile.module.css';
 import { useNavigate } from 'react-router-dom';
 
 import { useAuthContext } from '../../../hooks/useAuthContext';
+import Footer from '../../../components/Footer/Footer.jsx';
 
 const UpdateProfile = () => {
   const { dispatch, user, userDetails } = useAuthContext();
@@ -54,7 +55,6 @@ const UpdateProfile = () => {
       console.log(errorData);
       setError(errorData);
     }
-    console.log("form submitted");
   };
 
   return (
@@ -116,7 +116,16 @@ const UpdateProfile = () => {
           </select>
         </div>
         <button className={styles.submit_btn}>Update Profile</button>
+        <div className={styles.redirect}>
+          <div className={styles.separator}>
+            <hr />
+            OR
+            <hr />
+          </div>
+          <div className={`${styles.submit_btn} ${styles.menu_btn}`} onClick={() => navigate('/')}>Go to Menu Page</div>
+        </div>
       </form>
+      <Footer />
     </div>
   )
 }
