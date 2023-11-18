@@ -1,4 +1,53 @@
 .container{
     width: 83vw;
     min-height: 100vh;
+    margin-bottom: 35px;
+}
+
+h1{
+    margin-top: 20px;
+}
+
+.table{
+    margin: 0 auto;
+    margin-top: 35px;
+    width: 75%;
+}
+
+.header, .row{
+    display: flex;
+    justify-content: stretch;
+    align-items: center;
+
+    padding: 5px;
+    font-size: 20px;
+}
+
+.header div{
+    text-align: center;
+    font-weight: 600;
+}
+
+.row div{
+    text-align: center;
+}
+
+.id{
+    flex: 1 0 10%;
+}
+
+.name{
+    flex: 2 0 25%;
+}
+
+.phone{
+    flex: 2 0 25%;
+}
+
+.time{
+    flex: 1 0 20%;
+}
+
+.hostel{
+    flex: 1 0 20%;
 }
