@@ -57,7 +57,7 @@ const Order = () => {
           <div className={styles.user}>
             <div className={styles.container}>
               <div className={styles.orderNumber}><strong>Order ID: {order.order.orderNumber}</strong></div>
-              <div className={styles.orderStatus}><strong> Order Status: <span style={{ "color": order.order.status === "Accepted" ? "#FFA500" : order.status === "Delivered" ? "#43A905" : "#CB072B" }}>{order.order.status}</span></strong> </div>
+              <div className={styles.orderStatus}><strong> Order Status: <span style={{ "color": order.order.status === "Accepted" ? "#FFA500" : order.order.status === "Delivered" ? "#43A905" : "#CB072B" }}>{order.order.status}</span></strong> </div>
             </div>
             <hr />
             <div className={styles.container4}>

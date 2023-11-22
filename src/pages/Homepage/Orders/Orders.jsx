@@ -7,12 +7,16 @@ import Footer from '../../../components/Footer/Footer';
 
 const Orders = () => {
   const { user } = useAuthContext();
-  const [orders, setOrders] = useState(null);
+  const [orders, setOrders] = useState([]);
+  const [page, setPage] = useState(1);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [hasMore, setHasMore] = useState(true);
 
   useEffect(() => {
     const getOrders = async () => {
-      const response = await fetch(`http://localhost:3000/api/orders/orders`, {
+      setLoading(true);
+      const response = await fetch(`http://localhost:3000/api/orders/orders?page=${page}&per_page=10`, {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${user.token}`
@@ -20,14 +24,35 @@ const Orders = () => {
       })
       if (response.ok) {
         const json = await response.json();
-        setOrders(json);
+        setOrders((prevOrders) => [...prevOrders, ...json.data]);
+        if(json.metadata.total_pages === json.metadata.current_page)
+          setHasMore(false); 
+        setLoading(false);
       }
       else {
         const json = await response.json();
+        setHasMore(false);
+        setLoading(false);
         setError(json.err);
       }
     }
-    getOrders();
+    if (hasMore)
+      getOrders();
+  }, [page, hasMore]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Check if the user has scrolled to the bottom of the page
+      if (Math.ceil(window.innerHeight + document.documentElement.scrollTop) === document.documentElement.offsetHeight) {
+        setPage((prevPage) => prevPage + 1);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      // Remove scroll event listener on component unmount
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   return (
@@ -43,7 +68,13 @@ const Orders = () => {
           <div className={styles.btn}></div>
         </div>
         <hr />
-        {orders && orders.map((order) => <OrdersRow order={order} key={order._id}/>)}
+        {orders.length > 0 && orders.map((order) => <OrdersRow order={order} key={order._id} />)}
+        {loading && <div className={styles.loading}>
+          <span className={styles.loading__dot}></span>
+          <span className={styles.loading__dot}></span>
+          <span className={styles.loading__dot}></span>
+        </div>}
+        {!hasMore && <p className={styles.end}>That's it, No more Orders to display :)</p>}
       </div>
       <Footer />
     </div>

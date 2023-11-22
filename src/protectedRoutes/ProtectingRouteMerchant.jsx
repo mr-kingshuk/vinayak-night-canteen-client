@@ -42,7 +42,7 @@ const ProtectingRouteMerchant = ({ component }) => {
         routes: [
             { key: 1, route: "/merchant/orders", name: "Order Details" },
             { key: 2, route: "/merchant/workers", name: "Worker IDs" },
-            { key: 3, route: "/merchant/delete_orders", name: "Delete Orders" },
+            { key: 3, route: "/merchant/cancelled_orders", name: "Cancelled Orders" },
             { key: 4, route: "/merchant/items_category", name: "Items and Category" }
         ]
     }

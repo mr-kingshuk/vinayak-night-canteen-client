@@ -19,19 +19,23 @@
 }
 
 .name{
-    flex: 2 0 25%;
+    flex: 2 0 20%;
 }
 
 .phone{
-    flex: 2 0 25%;
+    flex: 2 0 20%;
+}
+
+.date{
+    flex: 2 0 20%;
 }
 
 .time{
-    flex: 1 0 20%;
+    flex: 1 0 15%;
 }
 
 .hostel{
-    flex: 1 0 20%;
+    flex: 1 0 15%;
 }
 
 
@@ -100,6 +104,7 @@
 .modal{
     border: 2px solid black;
     margin-bottom: 10px;
+    padding-bottom: 10px;
 }
 
 .btn{

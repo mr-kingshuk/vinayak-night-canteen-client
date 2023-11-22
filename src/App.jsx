@@ -10,7 +10,7 @@ import Orders from './pages/Homepage/Orders/Orders.jsx';
 import UpdateProfile from './pages/Homepage/UpdateProfile/UpdateProfile.jsx';
 
 //Merchant Components
-import DeleteOrders from './pages/Merchant/DeleteOrders/DeleteOrder.jsx';
+import CancelledOrder from './pages/Merchant/DeleteOrders/CancelledOrder.jsx';
 import ItemsCategory from './pages/Merchant/ItemsCategory/ItemsCategory.jsx';
 import OrderDetails from './pages/Merchant/OrdersDetails/OrderDetails.jsx';
 import WorkerDetails from './pages/Merchant/WorkerDetails/WorkerDetails.jsx';
@@ -58,8 +58,8 @@ function App() {
           path='/merchant/items_category'
           element={<ProtectingRouteMerchant component={<ItemsCategory />} />} />
         <Route
-          path='/merchant/delete_orders'
-          element={<ProtectingRouteMerchant component={<DeleteOrders />} />} />
+          path='/merchant/cancelled_orders'
+          element={<ProtectingRouteMerchant component={<CancelledOrder />} />} />
         <Route
           path='/merchant/workers'
           element={<ProtectingRouteMerchant component={<WorkerDetails />} />} />

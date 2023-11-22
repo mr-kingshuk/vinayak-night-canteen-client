@@ -1,25 +1,16 @@
 .container{
     width: 83vw;
     min-height: 100vh;
+}
+
+.container{
+    width: 83vw;
+    min-height: 100vh;
     margin-bottom: 35px;
 }
 
 h1{
-    margin: 25px 0;
-}
-
-.details{
-    width: 70%;
-    margin: auto;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 10px 0;
-}
-
-.subdetails{
-    font-size: 20px;
-    font-weight: 600;
+    margin-top: 20px;
 }
 
 .table{
@@ -68,13 +59,6 @@ h1{
 
 .hostel{
     flex: 1 0 15%;
-}
-
-.error{
-    text-align: center;
-    margin: 25px 0;
-    font-weight: 600;
-    font-size: 25px;
 }
 
 /* Pagination */

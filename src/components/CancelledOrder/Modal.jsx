@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import styles from '../ReceivedOrders.module.css';
+import styles from './Order.module.css';
 
-import { useAuthContext } from '../../../hooks/useAuthContext.jsx';
+import { useAuthContext } from '../../hooks/useAuthContext.jsx';
 
-const Modal = ({ order, orders, setOrders }) => {
+const Modal = ({ order }) => {
     const { user } = useAuthContext();
     const [orderD, setOrderD] = useState(null);
 
@@ -27,44 +27,6 @@ const Modal = ({ order, orders, setOrders }) => {
         }
         getOrderD();
     }, []);
-
-    const handleDeliver = async () => {
-        const response = await fetch(`http://localhost:3000/api/orders/deliver/${order._id}`, {
-            method: 'PATCH',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${user.token}`
-            }
-        });
-
-        if (response.ok) {
-            const json = await response.json();
-            setOrders(orders.filter((order) => order._id !== json._id));
-        }
-        else {
-            const errorData = await response.json();
-            console.log(errorData);
-        }
-    };
-
-    const handleCancel = async () => {
-        const response = await fetch(`http://localhost:3000/api/orders/cancel/${order._id}`, {
-            method: 'PATCH',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${user.token}`
-            }
-        });
-
-        if (response.ok) {
-            const json = await response.json();
-            setOrders(orders.filter((order) => order._id !== json._id));
-        }
-        else {
-            const errorData = await response.json();
-            console.log(errorData);
-        }
-    };
 
     return (
         <div className={styles.modal}>
@@ -106,12 +68,8 @@ const Modal = ({ order, orders, setOrders }) => {
                     <div className={styles.value}>Rs. {total + 20}</div>
                 </div>
             </div>
-            <div className={styles.btn}>
-                <div className={styles.deliver} onClick={handleDeliver}>Deliver</div>
-                <div className={styles.cancel} onClick={handleCancel}>Cancel</div>
-            </div>
         </div>
     )
 }
 
-export default Modal
+export default Modal;

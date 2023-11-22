@@ -40,7 +40,7 @@ const OrderReceived = () => {
             <div className={styles.hostel}>Hostel</div>
           </div>
           <hr />
-          {orders && orders.map((order) => <ReceivedOrders order={order} setOrders={setOrders} key={order._id}/> )}
+          {orders && orders.map((order) => <ReceivedOrders order={order} orders={orders} setOrders={setOrders} key={order._id}/> )}
       </div> 
     </div>
   )

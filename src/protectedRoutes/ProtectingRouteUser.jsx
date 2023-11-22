@@ -6,6 +6,7 @@ import Navbar from '../pages/Homepage/Navbar/Navbar.jsx';
 
 const ProtectingRouteUser = ({ component }) => {
     const { user } = useAuthContext();
+    console.log(user);
     const navigate = useNavigate();
 
 

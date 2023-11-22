@@ -6,7 +6,7 @@
     border-radius: 5px;
 }
 
-.rows div{
+.rows > *{
     text-align: center;
     padding: 7px;
     font-size: 15px;
@@ -35,6 +35,7 @@
 .status{
     flex: 2;
     font-weight: 600;
+    font-size: 20px;
 }
 
 .btn{
