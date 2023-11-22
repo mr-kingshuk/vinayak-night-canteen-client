@@ -32,7 +32,7 @@ const Navbar = () => {
             <div className={styles.logo}>
               <img src="./logo.jpeg" alt="" />
             </div>
-            <p>+91 93216 67834</p>
+            <p>9571960571</p>
           </div>
           <div className={styles.name_tab} onClick={() => setIsOpen(!isOpen)} ref={modalRef}>
             <div className={styles.name}>{userDetails.name ? userDetails.name : null}</div>
