@@ -9,7 +9,7 @@ const ItemTableItem = ({ foodItems, itemGroup }) => {
     
 
     const deleteHandler = async () => {
-        const response = await fetch(`http://localhost:3000/api/fooditems/item/${itemGroup._id}`, {
+        const response = await fetch(`http://13.232.148.171/api/fooditems/item/${itemGroup._id}`, {
             method: 'DELETE',
             headers: {
                 'Authorization': `Bearer ${user.token}`

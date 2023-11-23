@@ -28,7 +28,7 @@ const Order = () => {
     }
 
     const getOrder = async () => {
-      const response = await fetch(`http://localhost:3000/api/orders/order/${id}`, {
+      const response = await fetch(`http://13.232.148.171/api/orders/order/${id}`, {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${user.token}`

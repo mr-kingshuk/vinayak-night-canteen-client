@@ -10,7 +10,7 @@ const Modal = ({ order }) => {
     var total = 0;
     useEffect(() => {
         const getOrderD = async () => {
-            const response = await fetch(`http://localhost:3000/api/orders/order/${order._id}`, {
+            const response = await fetch(`http://13.232.148.171/api/orders/order/${order._id}`, {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${user.token}`

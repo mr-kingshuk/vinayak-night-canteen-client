@@ -7,7 +7,7 @@ const Worker = ({ worker, index, users }) => {
   const { user } = useAuthContext();
 
   const deleteHandler = async () => {
-    const response = await fetch(`http://localhost:3000/api/workers/${worker._id}`, {
+    const response = await fetch(`http://13.232.148.171/api/workers/${worker._id}`, {
       method: 'DELETE',
       headers: {
         'Authorization': `Bearer ${user.token}`

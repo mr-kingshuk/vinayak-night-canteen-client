@@ -10,7 +10,7 @@ const ItemsTableAdmin = ({ itemsCat }) => {
     const { items, setItems } = itemsCat;
 
     const deleteHandler = async (categoryId) => {
-        const response = await fetch(`http://localhost:3000/api/fooditems/category/${categoryId}`, {
+        const response = await fetch(`http://13.232.148.171/api/fooditems/category/${categoryId}`, {
             method: 'DELETE',
             headers: {
                 'Authorization': `Bearer ${user.token}`

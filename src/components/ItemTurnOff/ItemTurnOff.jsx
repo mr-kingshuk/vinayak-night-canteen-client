@@ -8,7 +8,7 @@ const ItemTurnOff = ({ item }) => {
 
     const handleChange = async () => {
         setState(!state);
-        const response = await fetch(`http://localhost:3000/api/fooditems/itemsChange/${item._id}`, {
+        const response = await fetch(`http://13.232.148.171/api/fooditems/itemsChange/${item._id}`, {
             method: 'PATCH',
             headers: {
                 'Authorization': `Bearer ${user.token}`

@@ -12,7 +12,7 @@ const ProtectingRouteWorker = ({ component }) => {
             setIsWorker(false);
         else {
             const checkAdmin = async () => {
-                const response = await fetch('http://localhost:3000/api/isWorker', {
+                const response = await fetch('http://13.232.148.171/api/isWorker', {
                     method: 'GET',
                     headers: {
                         'Authorization': `Bearer ${user.token}`

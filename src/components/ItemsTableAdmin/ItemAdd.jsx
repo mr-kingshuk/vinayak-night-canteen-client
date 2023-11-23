@@ -13,7 +13,7 @@ const ItemAdd = ({ itemsCat , categoryId}) => {
     const onSubmitHandler = async (e) => {
         e.preventDefault();
         setError(null);
-        const response = await fetch(`http://localhost:3000/api/fooditems/item/${categoryId}`, {
+        const response = await fetch(`http://13.232.148.171/api/fooditems/item/${categoryId}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
