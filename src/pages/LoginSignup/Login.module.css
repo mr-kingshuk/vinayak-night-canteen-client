@@ -1,5 +1,5 @@
 .container{
-    background:  url('./loginpage.png');
+    background:  url('./bg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top center ;
@@ -21,6 +21,7 @@ h1{
     font-size: 45px;
     font-weight: 600;
     text-align: center;
+    color: white;
 }
 
 h2{
