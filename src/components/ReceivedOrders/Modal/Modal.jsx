@@ -10,7 +10,7 @@ const Modal = ({ order, orders, setOrders }) => {
     var total = 0;
     useEffect(() => {
         const getOrderD = async () => {
-            const response = await fetch(`http://13.232.148.171/api/orders/order/${order._id}`, {
+            const response = await fetch(`http://localhost:3000/api/orders/order/${order._id}`, {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${user.token}`
@@ -29,7 +29,7 @@ const Modal = ({ order, orders, setOrders }) => {
     }, []);
 
     const handleDeliver = async () => {
-        const response = await fetch(`http://13.232.148.171/api/orders/deliver/${order._id}`, {
+        const response = await fetch(`http://localhost:3000/api/orders/deliver/${order._id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',
@@ -48,7 +48,7 @@ const Modal = ({ order, orders, setOrders }) => {
     };
 
     const handleCancel = async () => {
-        const response = await fetch(`http://13.232.148.171/api/orders/cancel/${order._id}`, {
+        const response = await fetch(`http://localhost:3000/api/orders/cancel/${order._id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',

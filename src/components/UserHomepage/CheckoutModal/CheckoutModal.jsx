@@ -16,14 +16,14 @@ const CheckoutModal = ({ setCheckoutModal }) => {
         let body = [];
         let itemInfo;
         orderItems.map((item) => {
-            console.log(item);
+            // console.log(item);
             itemInfo = { _id: item._id, name : item.name, price: item.price, quantity : item.quantity};
             body.push(itemInfo);
         });
         const order = {order : body};
         console.log(order);
 
-        const response = await fetch("http://13.232.148.171/api/orders", {
+        const response = await fetch("http://localhost:3000/api/orders", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

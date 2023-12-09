@@ -7,7 +7,7 @@ const AdminNavbar = ({ token }) => {
   const [isWorker, setIsWorker] = useState(null);
   useEffect(() => {
     const checkSuperAdmin = async () => {
-      const response = await fetch('http://13.232.148.171/api/isMerchant', {
+      const response = await fetch('http://localhost:3000/api/isMerchant', {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`
@@ -26,7 +26,7 @@ const AdminNavbar = ({ token }) => {
     checkSuperAdmin();
 
     const checkAdmin = async () => {
-      const response = await fetch('http://13.232.148.171/api/isWorker', {
+      const response = await fetch('http://localhost:3000/api/isWorker', {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`

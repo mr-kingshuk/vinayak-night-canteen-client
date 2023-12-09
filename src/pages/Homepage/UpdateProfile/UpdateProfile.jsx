@@ -29,7 +29,7 @@ const UpdateProfile = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await fetch("http://13.232.148.171/api/users/profile", {
+    const response = await fetch("http://localhost:3000/api/users/profile", {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',

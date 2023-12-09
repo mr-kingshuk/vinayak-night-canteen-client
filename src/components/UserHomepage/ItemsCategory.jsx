@@ -56,7 +56,7 @@ const ItemsCategory = ({ items }) => {
 
     const searchList = (search) => {
         setSearch(search);
-        const newList = items.items.filter((item) => search.toLowerCase() === '' ? item : item.name.toLowerCase().includes(search));
+        const newList = items.items.filter((item) => search.toLowerCase() === '' ? item : item.name.toLowerCase().includes(search.toLowerCase()));
         setQueryItems(newList);
     }
 

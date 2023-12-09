@@ -12,7 +12,7 @@ const ProtectingRouteMerchant = ({ component }) => {
             setIsMerchant(false);
         else {
             const checkAdmin = async () => {
-                const response = await fetch('http://13.232.148.171/api/isMerchant', {
+                const response = await fetch('http://localhost:3000/api/isMerchant', {
                     method: 'GET',
                     headers: {
                         'Authorization': `Bearer ${user.token}`
@@ -31,7 +31,7 @@ const ProtectingRouteMerchant = ({ component }) => {
         }
     });
 
-    const style = {
+    const style = { 
         display: "flex",
         justifyContent: "center",
         alignItems: "stretch"
@@ -43,7 +43,8 @@ const ProtectingRouteMerchant = ({ component }) => {
             { key: 1, route: "/merchant/orders", name: "Order Details" },
             { key: 2, route: "/merchant/workers", name: "Worker IDs" },
             { key: 3, route: "/merchant/cancelled_orders", name: "Cancelled Orders" },
-            { key: 4, route: "/merchant/items_category", name: "Items and Category" }
+            { key: 4, route: "/merchant/items_category", name: "Items and Category" },
+            { key: 4, route: "/merchant/store_timing", name: "Store Timing" },
         ]
     }
 

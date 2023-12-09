@@ -1,27 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './OrdersRow.module.css';
-import { parse, format } from 'date-fns';
+import moment from 'moment/moment';
 
 const OrdersRow = ({ order }) => {
     const navigate = useNavigate();
-    const date = new Date(order.createdAt).toLocaleDateString();
-    const time = new Date(order.createdAt).toLocaleTimeString();
+    const date = moment(order.createdAt).format('Do MMMM, YYYY');
+    const time = moment(order.createdAt).format('h:mm A');
     const [dateTime, setDateTime] = useState({ date, time });
-
-    useEffect(() => {
-        const handleDay = (date) => {
-            const parsedDate = parse(date, 'MM/dd/yyyy', new Date());
-            const formattedDate = format(parsedDate, 'do MMMM, yyyy');
-            return formattedDate;
-        }
-        const handleTime = (time) => {
-            const parsedTime = parse(time, 'h:mm:ss a', new Date());
-            const formattedTime = format(parsedTime, 'h:mm a');
-            return formattedTime;
-        }
-        setDateTime({date : handleDay(dateTime.date), time : handleTime(dateTime.time)});
-    }, [])
 
     return (
         <div className={styles.rows}>

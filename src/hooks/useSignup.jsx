@@ -10,7 +10,7 @@ const useSignup = (email, password, reEnterPassword, name) => {
         setIsLoading(true);
         setError(null);
 
-        const response = await fetch("http://13.232.148.171/api/users/signup", {
+        const response = await fetch("http://localhost:3000/api/users/signup", {
             method : 'POST',
             headers : {
                 'Content-Type' :'application/json'

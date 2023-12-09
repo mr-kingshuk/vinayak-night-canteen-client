@@ -14,7 +14,7 @@ const CancelledOrder = () => {
 
   const getOrder = async (page) => {
     console.log("here");
-    const response = await fetch(`http://13.232.148.171/api/orders/cancel?page=${page}&per_page=${ITEM_PER_PAGE}`, {
+    const response = await fetch(`http://localhost:3000/api/orders/cancel?page=${page}&per_page=${ITEM_PER_PAGE}`, {
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${user.token}`

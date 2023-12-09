@@ -41,6 +41,12 @@
     font-weight: 600;
 }
 
+.logo_number a{
+    /* text-decoration: none; */
+    color: black;
+    font-weight: 600;
+}
+
 .name_tab{
     border-radius: 50px;
     border: 2px solid #000;
@@ -83,7 +89,12 @@
         padding: 10px 20px;
     }
 
+    .navbar .logo{
+        height: 80%;
+        aspect-ratio: 1/1;
+    }
+
    .logo_number p{
-        display: none;
+        font-size: 14px;
    }
 }

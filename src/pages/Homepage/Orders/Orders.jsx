@@ -16,7 +16,7 @@ const Orders = () => {
   useEffect(() => {
     const getOrders = async () => {
       setLoading(true);
-      const response = await fetch(`http://13.232.148.171/api/orders/orders?page=${page}&per_page=10`, {
+      const response = await fetch(`http://localhost:3000/api/orders/orders?page=${page}&per_page=10`, {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${user.token}`
@@ -38,7 +38,7 @@ const Orders = () => {
     }
     if (hasMore)
       getOrders();
-  }, [page, hasMore]);
+  }, [ page, hasMore]);
 
   useEffect(() => {
     const handleScroll = () => {

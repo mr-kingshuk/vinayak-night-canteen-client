@@ -11,8 +11,8 @@ const ProtectingRouteGuest = ({ component, fallback }) => {
     useEffect(() => {
         if(user)
            navigate(fallback);
-       }, [user])
-  
+        }, [user])
+        
     return component;
 }
 

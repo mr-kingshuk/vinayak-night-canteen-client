@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { parse, format } from 'date-fns';
+import moment from 'moment/moment';
 
 import styles from './Order.module.css';
 import { useAuthContext } from '../../../hooks/useAuthContext.jsx';
@@ -15,20 +15,8 @@ const Order = () => {
   let total = 0;
 
   useEffect(() => {
-    const handleDay = (date) => {
-      const parsedDate = parse(date, 'MM/dd/yyyy', new Date());
-      const formattedDate = format(parsedDate, 'do MMMM, yyyy');
-      return formattedDate;
-    }
-
-    const handleTime = (time) => {
-      const parsedTime = parse(time, 'h:mm:ss a', new Date());
-      const formattedTime = format(parsedTime, 'h:mm a');
-      return formattedTime;
-    }
-
     const getOrder = async () => {
-      const response = await fetch(`https://api.vinayakfoods.co.in/api/orders/order/${id}`, {
+      const response = await fetch(`http://localhost:3000/api/orders/order/${id}`, {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${user.token}`
@@ -36,8 +24,8 @@ const Order = () => {
       })
       if (response.ok) {
         const json = await response.json();
-        const date = handleDay(new Date(json.order.createdAt).toLocaleDateString());
-        const time = handleTime(new Date(json.order.createdAt).toLocaleTimeString());
+        const date = moment(json.order.createdAt).format('Do MMMM, YYYY');
+        const time = moment(json.order.createdAt).format('h:mm A');
         setDateTime({ date: date, time: time });
         setOrder(json);
       }

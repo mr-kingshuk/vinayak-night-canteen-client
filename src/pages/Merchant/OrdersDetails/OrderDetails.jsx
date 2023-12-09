@@ -17,7 +17,7 @@ const OrderDetails = () => {
 
   const getOrder = async (page) => {
     const formattedDate = selectedDate ? selectedDate.toISOString() : '';
-    const response = await fetch(`http://13.232.148.171/api/orders/deliver?date=${formattedDate}&page=${page}&per_page=${ITEM_PER_PAGE}`, {
+    const response = await fetch(`http://localhost:3000/api/orders/deliver?date=${formattedDate}&page=${page}&per_page=${ITEM_PER_PAGE}`, {
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${user.token}`
