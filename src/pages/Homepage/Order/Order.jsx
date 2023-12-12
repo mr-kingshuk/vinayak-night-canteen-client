@@ -31,11 +31,11 @@ const Order = () => {
       }
       else {
         const json = await response.json();
-        navigate('/');
+        // navigate('/');
       }
     }
     getOrder();
-  });
+  }, []);
 
   return (
     <div className={styles.outerBox}>

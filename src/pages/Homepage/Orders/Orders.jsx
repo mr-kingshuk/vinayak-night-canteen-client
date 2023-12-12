@@ -7,7 +7,6 @@ import Footer from '../../../components/Footer/Footer';
 
 const Orders = () => {
   const { user } = useAuthContext();
-  console.log(user);
   const [orders, setOrders] = useState([]);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
@@ -25,7 +24,6 @@ const Orders = () => {
       })
       if (response.ok) {
         const json = await response.json();
-        console.log(json);
         setOrders((prevOrders) => [...prevOrders, ...json.data]);
         if(json.metadata.total_pages === json.metadata.current_page)
           setHasMore(false); 
