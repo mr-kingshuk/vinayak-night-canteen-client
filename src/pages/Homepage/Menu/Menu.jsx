@@ -4,8 +4,9 @@ import { useAuthContext } from '../../../hooks/useAuthContext.jsx';
 import ItemsCategory from '../../../components/UserHomepage/ItemsCategory.jsx';
 
 const Menu = () => {
-  const { user } = useAuthContext();
+  const {user}  = useAuthContext();
   const [items, setItems] = useState(null);
+
 
   useEffect(() => {
     const getItemsCategory = async () => {

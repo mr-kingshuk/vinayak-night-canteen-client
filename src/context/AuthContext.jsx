@@ -27,20 +27,9 @@ const authReducer = (state, action) => {
 
 export const AuthContextProvider = ({ children }) => {
     const [state, dispatch] = useReducer(authReducer, {
-        user: null,
-        userDetails : null
+        user: JSON.parse(localStorage.getItem('user')),
+        userDetails : JSON.parse(localStorage.getItem('userDetails'))
     });
-
-    //empty dependency array so, it renders only once.
-    useEffect(() => {
-        const user = JSON.parse(localStorage.getItem('user'));
-        const userDetails = JSON.parse(localStorage.getItem('userDetails'));
-        
-        if(user){
-            dispatch({type: 'login', payload: { user : user, userDetails : userDetails}})
-        }
-    }, []);
-
 
     return(
         <AuthContext.Provider value = {{...state, dispatch}}>

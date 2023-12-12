@@ -30,7 +30,9 @@ const Navbar = () => {
         <div className={styles.navbar}>
           <div className={styles.logo_number}>
             <div className={styles.logo}>
-              <img src="./logo.jpeg" alt="" />
+              <Link to="/">
+                <img src="./logo.jpeg" alt="" />
+              </Link>    
             </div>
             <p>
               <a href="tel:+919571960572">+91 95719 60572</a>

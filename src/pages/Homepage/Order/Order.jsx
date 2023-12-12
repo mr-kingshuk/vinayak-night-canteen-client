@@ -35,7 +35,7 @@ const Order = () => {
       }
     }
     getOrder();
-  }, []);
+  });
 
   return (
     <div className={styles.outerBox}>

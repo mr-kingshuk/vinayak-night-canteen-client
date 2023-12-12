@@ -10,6 +10,7 @@ const CheckoutModal = ({ setCheckoutModal }) => {
     const modalRef = useRef();
     const { user, userDetails } = useAuthContext();
     const { orderItems, dispatch } = useOrderContext();
+    let order;
 
     const handleSubmit = async () => {
         setCheckoutModal(false);
@@ -20,8 +21,7 @@ const CheckoutModal = ({ setCheckoutModal }) => {
             itemInfo = { _id: item._id, name : item.name, price: item.price, quantity : item.quantity};
             body.push(itemInfo);
         });
-        const order = {order : body};
-        console.log(order);
+        order = {order : body};
 
         const response = await fetch("http://localhost:3000/api/orders", {
             method: 'POST',
@@ -33,13 +33,38 @@ const CheckoutModal = ({ setCheckoutModal }) => {
         });
 
         if (response.ok) {
-            const json = await response.json();
+            const { orderDocRef, total } = await response.json();
+
+            //Getting API KEY of razorpay
+            const res = await fetch('http://localhost:3000/api/key');
+            const {key} = await res.json();
+
+            const options = {
+                key: key, 
+                amount: total,
+                currency: "INR",
+                name: "Vinayak Foods",
+                description: "Food Order Receipt",
+                order_id: orderDocRef.razorpayOrderId, 
+                callback_url: `http://localhost:3000/api/orders/verification?orderId=${orderDocRef._id}`,
+                prefill: {
+                    name: userDetails.name,
+                    email: user.email,
+                    contact: userDetails.phoneNo
+                },
+                theme: {
+                    "color": "#00EA6C"
+                } 
+            };
+            const razor = window.Razorpay(options);
             dispatch({ type: "remove" });
             localStorage.removeItem('order');
-            navigate(`/${json._id}`);
+            razor.open();
+            // navigate(`/${json._id}`);
         }
         else {
             const errorData = await response.json();
+            console.log(errorData);
             alert(errorData.err);
             window.location.reload();
         }
