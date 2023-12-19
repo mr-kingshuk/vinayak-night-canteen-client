@@ -104,6 +104,7 @@ input::placeholder{
     color: #e6312e;
     align-self: flex-end;
     font-size: 15px;
+    cursor: pointer;
 }
 
 .password, .signup_password{

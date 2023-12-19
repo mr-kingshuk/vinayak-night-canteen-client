@@ -7,6 +7,7 @@ const StoreTiming = () => {
     const { user } = useAuthContext();
     const [openTime, setOpenTime] = useState({ openHour: 0, openMin: 0 });
     const [closeTime, setCloseTime] = useState({ closeHour: 0, closeMin: 0 });
+    const [loading, setLoading] = useState(false);
 
     const formatTime = (hour, min) => {
         // Ensure that the hour and minute values are two-digit strings
@@ -39,6 +40,7 @@ const StoreTiming = () => {
 
     const onSubmitHandler = async () => {
         const body = {...openTime, ...closeTime};
+        setLoading(true);
         const response = await fetch("http://localhost:3000/api/timing", {
             method: 'POST',
             headers: {
@@ -51,9 +53,11 @@ const StoreTiming = () => {
         if (response.ok) {
             const json = await response.json();
             console.log(json);
+            setLoading(false);
         }
         else {
             const errorData = await response.json();
+            setLoading(false);
         }
     };
 
@@ -93,7 +97,7 @@ const StoreTiming = () => {
                     />
                 </div>
             </div>
-            <button className={styles.submit_btn} onClick={onSubmitHandler}>Submit</button>
+            <button style={{cursor: loading ? 'progress':'pointer'}} className={styles.submit_btn} onClick={onSubmitHandler}>Submit</button>
         </div>
     )
 }
