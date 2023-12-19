@@ -5,6 +5,12 @@
     
 }
 
+@media screen and (max-width: 750px) {
+    .container{
+        width: 100vw;
+    }
+}
+
 .conatiner h1{
     font-size: 30px;
     font-weight: 600;

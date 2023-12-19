@@ -9,6 +9,27 @@
     align-items: center;
 }
 
+@media screen and (max-width: 1000px) {
+    .container{
+        width: 46%;
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .container{
+        width: 45%;
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .container{
+        width: 85%;
+        margin: auto;
+    }
+}
+
 .conatiner .name{
     font-size: 20px;
     font-weight: 400;
@@ -31,3 +52,5 @@
     background: red;
     color: white;
 }
+
+

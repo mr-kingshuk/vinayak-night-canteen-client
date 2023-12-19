@@ -53,12 +53,12 @@
     padding: 5px;
 }
 
-.header div{
+.header>*{
     text-align: center;
     font-weight: 600;
 }
 
-.row div{
+.row>*{
     text-align: center;
 }
 
@@ -140,4 +140,70 @@
     display: flex;
     justify-content: space-between;
     padding: 15px 20px;
+}
+
+@media screen and (max-width: 500px) {
+    .rowout{
+        flex-wrap: wrap;
+    }
+
+    .table{
+        width: 92%;
+    }
+
+    .date{
+        flex: 1 0 60%;
+        margin-top: 10px;
+    }
+
+    .time{
+        flex: 1 0 20%;
+        margin-top: 10px;
+    }
+
+    .hostel{
+        flex: 1 0 20%;
+        margin-top: 10px;
+    }
+
+    .id{
+        flex: 1 0 25%;
+    }
+
+    .name{
+        flex: 2 0 35%;
+    }
+
+    .phone{
+        flex: 2 0 40%;
+    }
+
+    .payment_id{
+        justify-content: center;
+        gap: 5px;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .payment_id> *{
+        text-align: center;
+    }
+
+    .item_id{
+       display: none;
+    }
+    
+    .item_name{
+        flex: 2 0 50%;
+        text-align: left;
+    }
+    
+    .quantity{
+        flex: 1 0 25%;
+    }
+    
+    .price{
+        flex: 2 0 25%;
+        text-align: right;
+    }
 }

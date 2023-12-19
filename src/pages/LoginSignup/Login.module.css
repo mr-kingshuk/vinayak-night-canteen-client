@@ -40,14 +40,14 @@ h1{
     text-align: center;
 }
 
-h2{
+.college{
     text-align: center;
     margin: 0 30px;
 }
 
 
 @media only screen and (max-width: 550px) {
-    h2 {
+    .college {
       display: none;
     }
   }

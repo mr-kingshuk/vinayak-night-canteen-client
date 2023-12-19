@@ -50,7 +50,6 @@
     justify-content: center;
     align-items: flex-end;
     gap: 25px;
-
 }
 
 .form .textbox{
@@ -145,4 +144,30 @@ input::placeholder{
 
 .fields input{
     width: 45%;
+}
+
+@media screen and (max-width: 750px) {
+    .container{
+        width: 93%;
+    }
+
+    .category .heading h2{
+        font-size: 25px;
+        font-weight: 600;
+        margin: 0;
+    }
+
+    .form{
+        width: 85%;
+        gap: 10px;
+    }
+
+    .items{
+        justify-content: center;
+        align-items: center;
+    }
+
+    .box{
+        width: 95%;
+    }
 }
