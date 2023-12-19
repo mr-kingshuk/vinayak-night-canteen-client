@@ -29,10 +29,10 @@ const Worker = ({ worker, index, users }) => {
     return (
 
       <div className={styles.row}>
-        <div style={{ "flex": 1 }}>{index}</div>
-        <div style={{ "flex": 2 }}>{worker.name}</div>
-        <div style={{ "flex": 2 }}>{worker.email}</div>
-        <div style={{ "flex": 1 }}>
+        <div style={{ "flex": 1 }} className={styles.id}>{index}</div>
+        <div style={{ "flex": 2 }} className={styles.name}>{worker.name}</div>
+        <div style={{ "flex": 2 }}  className={styles.email}>{worker.email}</div>
+        <div style={{ "flex": 1 }}  className={styles.delete}>
           <div onClick={deleteHandler} className={styles.delete_btn}>Delete</div>
         </div>
       </div>

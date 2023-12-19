@@ -10,8 +10,8 @@ const WorkerTable = ({ workers }) => {
   return (
     <div className={styles.container}>
       <div className={styles.heading}>
-        <div style={{ "flex": 1 }}>Sr. No.</div>
-        <div style={{ "flex": 2 }}>Name</div>
+        <div style={{ "flex": 1 }} className={styles.id}>Sr. No.</div>
+        <div style={{ "flex": 2 }} className={styles.name}>Name</div>
         <div style={{ "flex": 2 }}>Email ID</div>
         <div style={{ "flex": 1 }}>Delete</div>
       </div>

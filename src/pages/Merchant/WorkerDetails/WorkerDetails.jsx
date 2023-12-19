@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styles from './WorkerDetails.module.css';
 
 import WorkerTable from '../../../components/WorkerTable/WorkerTable.jsx';
+import StoreTiming from '../StoreTiming/StoreTiming.jsx';
 import { useAuthContext } from '../../../hooks/useAuthContext';
 
 const WorkerDetails = () => {
@@ -57,6 +58,7 @@ const WorkerDetails = () => {
 
   return (
     <div className={styles.container}>
+      <StoreTiming />
       <h1>Worker Details</h1>
       <form
         onSubmit={onSubmitHandler}
