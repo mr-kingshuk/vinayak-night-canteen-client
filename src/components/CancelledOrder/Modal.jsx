@@ -27,9 +27,14 @@ const Modal = ({ order }) => {
         }
         getOrderD();
     }, []);
+    console.log(orderD);
 
     return (
         <div className={styles.modal}>
+            {orderD && <div className={styles.payment_id}>
+                <div><strong>Razorpay Order Id: </strong>{orderD.order.razorpayOrderId}</div>
+                <div><strong>Razorpay Payment Id: </strong>{orderD.order.razorpayPaymentId}</div>
+            </div>}
             <div className={styles.table}>
                 <div className={styles.header}>
                     <div className={styles.item_id}>Sr. No.</div>

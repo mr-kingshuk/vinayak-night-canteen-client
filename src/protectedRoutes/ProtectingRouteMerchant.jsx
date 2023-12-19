@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import { useAuthContext } from '../hooks/useAuthContext';
 import AdminSidebar from '../components/AdminSidebar/AdminSidebar.jsx';
+import styles from './Admin.module.css';
 
 const ProtectingRouteMerchant = ({ component }) => {
     const [isMerchant, setIsMerchant] = useState(null);
@@ -31,12 +32,6 @@ const ProtectingRouteMerchant = ({ component }) => {
         }
     });
 
-    const style = { 
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "stretch"
-    }
-
     const routing = {
         type: "Merchant",
         routes: [
@@ -44,12 +39,11 @@ const ProtectingRouteMerchant = ({ component }) => {
             { key: 2, route: "/merchant/workers", name: "Worker IDs" },
             { key: 3, route: "/merchant/cancelled_orders", name: "Cancelled Orders" },
             { key: 4, route: "/merchant/items_category", name: "Items and Category" },
-            { key: 4, route: "/merchant/store_timing", name: "Store Timing" },
         ]
     }
 
     if (isMerchant)
-        return <div style={style}><AdminSidebar routing={routing} />{component}</div>;
+        return <div className={styles.outer}><AdminSidebar routing={routing} />{component}</div>;
     else
         return (<h1>404 NOT FOUND</h1>);
 }

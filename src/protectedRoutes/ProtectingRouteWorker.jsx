@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import { useAuthContext } from '../hooks/useAuthContext';
 import AdminSidebar from '../components/AdminSidebar/AdminSidebar.jsx';
+import styles from './Admin.module.css';
 
 const ProtectingRouteWorker = ({ component }) => {
     const [isWorker, setIsWorker] = useState(null);
@@ -31,12 +32,6 @@ const ProtectingRouteWorker = ({ component }) => {
         }
     });
 
-    const style = {
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "stretch"
-    }
-
     const routing = {
         type: "Worker",
         routes: [
@@ -46,7 +41,7 @@ const ProtectingRouteWorker = ({ component }) => {
     }
 
     if (isWorker)
-        return <div style={style}><AdminSidebar routing={routing} />{component}</div>;
+        return <div className={styles.outer}><AdminSidebar routing={routing} />{component}</div>;
     else
         return (<h1>404 NOT FOUND</h1>);
 }

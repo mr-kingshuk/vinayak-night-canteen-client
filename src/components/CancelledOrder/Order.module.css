@@ -135,3 +135,9 @@
     background: #CB072B;
     color: white;
 }
+
+.payment_id{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+}

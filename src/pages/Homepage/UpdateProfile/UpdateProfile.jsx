@@ -82,7 +82,8 @@ const UpdateProfile = () => {
             error && error.fields.includes("phoneNo") && <div className={styles.error}>{error.message}</div>
           }
           <input
-            type="text"
+            type="tel"
+            pattern="[0-9]{10}"
             onChange={(e) => setForm({ ...form, phoneNo: e.target.value })}
             value={form.phoneNo}
             placeholder="Phone Number"

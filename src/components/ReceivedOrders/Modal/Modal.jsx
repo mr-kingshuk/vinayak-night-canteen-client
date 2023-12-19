@@ -71,7 +71,7 @@ const Modal = ({ order, orders, setOrders }) => {
             <div className={styles.table}>
                 <div className={styles.header}>
                     <div className={styles.item_id}>Sr. No.</div>
-                    <div className={styles.item_name}>Item Name</div>
+                    <div className={styles.item_name}>Name</div>
                     <div className={styles.quantity}>Quantity</div>
                     <div className={styles.price}>Price</div>
                 </div>

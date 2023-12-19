@@ -9,22 +9,24 @@ const ReceivedOrders = ({ order, orders, setOrders }) => {
     const modalRef = useRef();
     const [modal, setModal] = useState(false);
 
-    useEffect(() => {
-        const handler = (event) => {
-          if (!modalRef.current.contains(event.target))
-            setModal(false);
-        };
+    // useEffect(() => {
+    //     const handler = (event) => {
+    //       if (!modalRef.current.contains(event.target))
+    //         setModal(false);
+    //     };
     
-        document.addEventListener("mousedown", handler);
-        return () => document.removeEventListener("mousedown", handler);
-      });
+    //     document.addEventListener("mousedown", handler);
+    //     return () => document.removeEventListener("mousedown", handler);
+    // });
 
     return (
         <div ref={modalRef}>
-            <div className={styles.rowout} onClick={() => !modal && setModal(!modal)} style={{background : modal ? "lightgray" : "white"}} >
+            <div className={styles.rowout} onClick={() => setModal(!modal)} style={{background : modal ? "lightgray" : "white"}} >
                 <div className={styles.id}>{order.orderNumber}</div>
                 <div className={styles.name}>{order.userId.name}</div>
-                <div className={styles.phone}>{order.userId.phoneNo}</div>
+                <div className={styles.phone}>
+                    <a href={`tel:${order.userId.phoneNo}`}>{order.userId.phoneNo}</a>
+                </div>
                 <div className={styles.time}>{moment(order.createdAt).format('h:mm A')}</div>
                 <div className={styles.hostel}>{order.hostel}</div>
             </div>

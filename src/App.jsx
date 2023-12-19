@@ -15,7 +15,7 @@ import CancelledOrder from './pages/Merchant/DeleteOrders/CancelledOrder.jsx';
 import ItemsCategory from './pages/Merchant/ItemsCategory/ItemsCategory.jsx';
 import OrderDetails from './pages/Merchant/OrdersDetails/OrderDetails.jsx';
 import WorkerDetails from './pages/Merchant/WorkerDetails/WorkerDetails.jsx';
-import StoreTiming from './pages/Merchant/StoreTiming/StoreTiming.jsx';
+// import StoreTiming from './pages/Merchant/StoreTiming/StoreTiming.jsx';
 
 //Worker Components
 import ItemOff from './pages/Worker/ItemOff/ItemOff.jsx';
@@ -84,9 +84,6 @@ function App() {
         <Route
           path='/merchant/workers'
           element={<ProtectingRouteMerchant component={<WorkerDetails />} />} user={user} />
-        <Route
-          path='/merchant/store_timing'
-          element={<ProtectingRouteMerchant component={<StoreTiming />} />} user={user} />
 
         {/* Worker Routes */}
         <Route
