@@ -31,7 +31,7 @@ const Order = () => {
       }
       else {
         const json = await response.json();
-        // navigate('/');
+        navigate('/');
       }
     }
     getOrder();

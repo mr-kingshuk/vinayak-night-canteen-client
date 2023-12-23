@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, Navigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styles from './LoginSignup.module.css';
 
 import useLogin from '../../hooks/useLogin';
@@ -46,7 +46,7 @@ const LoginBox = () => {
           value={password}
           placeholder="Password" 
           className={error && error.fields.includes("password") && styles.error_box}/>
-        <div className={styles.forget_password}>Forget Password?</div>
+        <Link className={styles.forget_password} to = '/reset-password'>Forget Password</Link>  
         <img 
           style={{top: "9px"}}
           src={showPassword ? './hide.png' : './show.png'} 
