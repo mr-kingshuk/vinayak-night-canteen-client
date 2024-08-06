@@ -52,7 +52,6 @@ const UpdateProfile = () => {
     }
     else {
       const errorData = await response.json();
-      console.log(errorData);
       setError(errorData);
     }
   };

@@ -6,7 +6,7 @@ import OrderSummary from './OrderSummary/OrderSummary.jsx';
 import CheckoutModal from './CheckoutModal/CheckoutModal.jsx';
 import styles from './MenuHomepage.module.css';
 
-const ItemsCategory = ({ items }) => {
+const ItemsCategory = ({ items, openTime, closeTime }) => {
     const modalRef = useRef();
     const iconRef = useRef();
     const [search, setSearch] = useState('');
@@ -14,6 +14,25 @@ const ItemsCategory = ({ items }) => {
     const [activeCategory, setActiveCategory] = useState(items.category[0]._id);
     const [modalOpen, setModalOpen] = useState(false);
     const [checkoutModal, setCheckoutModal] = useState(false);
+
+    const formatTime = (hour, min) => {
+        let ampm = "";
+        if (hour / 12) {
+            ampm = "PM";
+            if (hour != 12)
+                hour %= 12;
+        }
+        else {
+            ampm = "AM"
+            if (hour == 0)
+                hour = 12;
+        }
+        const formattedHour = hour.toString().padStart(2, '0');
+        const formattedMin = min.toString().padStart(2, '0');
+
+        // Create the formatted time string in "hh:mm" format
+        return `${formattedHour}:${formattedMin} ${ampm}`;
+    };
 
     useEffect(() => {
         const handleScroll = () => {
@@ -43,7 +62,7 @@ const ItemsCategory = ({ items }) => {
 
     useEffect(() => {
         const handler = (event) => {
-            if(iconRef.current.contains(event.target)){
+            if (iconRef.current.contains(event.target)) {
                 setModalOpen(!modalOpen);
             }
             else if (!modalRef.current.contains(event.target))
@@ -85,7 +104,10 @@ const ItemsCategory = ({ items }) => {
             </aside>
             <main>
                 <div className={styles.heading}>
-                    <h1>Vinayak Night Canteen</h1>
+                    <div className={styles.side_heading}>
+                        <h1>Vinayak Night Canteen</h1>
+                        <p>Store opens at <strong>{formatTime(openTime.openHour, openTime.openMin)}</strong> and closes at <strong>{formatTime(closeTime.closeHour, closeTime.closeMin)}</strong></p>
+                    </div>
                     <div className={styles.search}>
                         <input
                             type="text"
@@ -122,11 +144,11 @@ const ItemsCategory = ({ items }) => {
                     )}
                 </div> : <div className={styles.no_items}> No Items Found.</div>}
 
-                <div className={styles.catgeory_btn}  ref={iconRef}>
+                <div className={styles.catgeory_btn} ref={iconRef}>
                     <img src="./category.png" alt="category button" />
                 </div>
             </main>
-            <OrderSummary setCheckoutModal={setCheckoutModal}/>
+            <OrderSummary setCheckoutModal={setCheckoutModal} />
         </div>
     )
 

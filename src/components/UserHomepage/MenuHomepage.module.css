@@ -79,9 +79,22 @@ main{
     align-items: center;
 }
 
+.heading .side_heading{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 5px;
+}
+
 .heading h1{
     font-size: 45px;
     font-weight: 600;
+    margin: 10px 0 0;
+}
+
+.heading p{
+    font-style: italic;
 }
 
 .search{
@@ -175,6 +188,11 @@ input::placeholder{
 @media screen and (max-width: 950px) {
     .heading h1{
         font-size: 35px;
+    }
+
+    .side_heading p{
+        text-align: center;
+        padding: 0 20px;
     }
 
     .catgeory_btn{

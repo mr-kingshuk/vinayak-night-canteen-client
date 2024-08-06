@@ -35,7 +35,7 @@ const Navbar = () => {
               </Link>    
             </div>
             <p>
-              <a href="tel:+919571960572">+91 95719 60572</a>
+              <a href="tel:+919321667834">+91 93216 67834</a>
             </p>
           </div>
           <div className={styles.name_tab} onClick={() => setIsOpen(!isOpen)} ref={modalRef}>

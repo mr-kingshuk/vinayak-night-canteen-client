@@ -34,7 +34,6 @@ const ItemOff = () => {
   const searchList = (search) => {
     setSearch(search);
     const newList = items.items.filter((item) => search.toLowerCase() === '' ? item : item.name.toLowerCase().includes(search));
-    console.log(newList);
     setQueryItems(newList);
   }
 

@@ -37,7 +37,6 @@ const useLogin = (email, password) => {
         }
         else{
             const errorData = await response.json(); 
-            console.log(errorData);
             setIsLoading(false);
             setError(errorData);
         }

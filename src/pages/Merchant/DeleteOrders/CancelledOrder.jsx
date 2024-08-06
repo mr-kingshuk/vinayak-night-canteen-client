@@ -13,7 +13,6 @@ const CancelledOrder = () => {
   const arr = [];
 
   const getOrder = async (page) => {
-    console.log("here");
     const response = await fetch(`http://localhost:3000/api/orders/cancel?page=${page}&per_page=${ITEM_PER_PAGE}`, {
       method: 'GET',
       headers: {
@@ -22,7 +21,6 @@ const CancelledOrder = () => {
     })
     if (response.ok) {
       const json = await response.json();
-      console.log(json);
       setOrders(json.data);
       setCurrentPage(json.metadata.current_page);
       setTotalPages(json.metadata.total_pages);
@@ -51,12 +49,9 @@ const CancelledOrder = () => {
   };
 
   const rightHandler = () => {
-    console.log("here2")
     if (currentPage !== totalPages)
       getOrder(currentPage + 1);
   };
-
-  console.log(currentPage);
 
   return (
     <div className={styles.container}>

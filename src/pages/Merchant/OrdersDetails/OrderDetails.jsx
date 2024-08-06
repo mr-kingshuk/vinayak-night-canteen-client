@@ -54,7 +54,6 @@ const OrderDetails = () => {
   };
 
   const rightHandler = () => {
-    console.log("here2")
     if (currentPage !== totalPages)
       getOrder(currentPage + 1);
   };

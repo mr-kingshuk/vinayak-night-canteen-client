@@ -27,7 +27,6 @@ const Modal = ({ order }) => {
         }
         getOrderD();
     }, []);
-    console.log(orderD);
 
     return (
         <div className={styles.modal}>

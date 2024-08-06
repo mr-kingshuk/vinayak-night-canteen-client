@@ -17,7 +17,6 @@ const CheckoutModal = ({ setCheckoutModal }) => {
         let body = [];
         let itemInfo;
         orderItems.map((item) => {
-            // console.log(item);
             itemInfo = { _id: item._id, name : item.name, price: item.price, quantity : item.quantity};
             body.push(itemInfo);
         });
@@ -64,7 +63,6 @@ const CheckoutModal = ({ setCheckoutModal }) => {
         }
         else {
             const errorData = await response.json();
-            console.log(errorData);
             alert(errorData.err);
             window.location.reload();
         }

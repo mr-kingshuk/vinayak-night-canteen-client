@@ -33,6 +33,7 @@ const StoreTiming = () => {
             }
             else {
                 const json = await response.json();
+                console.log(json);
             }
         }
         getTime();
@@ -52,8 +53,8 @@ const StoreTiming = () => {
 
         if (response.ok) {
             const json = await response.json();
-            console.log(json);
             setLoading(false);
+            alert("Store Timing changed");
         }
         else {
             const errorData = await response.json();
