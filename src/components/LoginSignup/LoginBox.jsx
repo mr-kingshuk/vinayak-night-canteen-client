@@ -46,9 +46,8 @@ const LoginBox = () => {
           value={password}
           placeholder="Password" 
           className={error && error.fields.includes("password") && styles.error_box}/>
-        <Link className={styles.forget_password} to = '/reset-password'>Forget Password</Link>  
+        <Link className={styles.forget_password} to = '/forget-password'>Forget Password</Link>  
         <img 
-          style={{top: "9px"}}
           src={showPassword ? './hide.png' : './show.png'} 
           alt="" onClick={togglePasswordVisibility} 
           className={styles.password}/>

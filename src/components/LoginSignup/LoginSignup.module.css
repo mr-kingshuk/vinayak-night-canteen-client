@@ -67,6 +67,20 @@
     padding:0 0 2px 5px;
 }
 
+.errorResetPassword{
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  color: red;
+  background-color: rgb(255, 187, 187);
+  max-width: 80%;
+
+  text-align: center;
+  align-self: center;
+  padding: 5px 10px;
+  border: 2px solid red;
+  border-radius: 10px;
+  margin: 10px 0 0;
+}
+
 .success{
   color: #228B22;
 }

@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 
 import Login from "./pages/LoginSignup/Login.jsx";
 import Signup from './pages/LoginSignup/Signup.jsx';
+import ForgetPassword from './pages/LoginSignup/ForgetPassword.jsx';
 import ResetPassword from './pages/LoginSignup/ResetPassword.jsx';
 import { useAuthContext } from './hooks/useAuthContext.jsx';
 
@@ -44,11 +45,17 @@ function App() {
               <Signup />
             </ProtectingRouteGuest>} />
         <Route
-          path='/reset-password'
+          path='/reset-password/:id/:header/:payload/:signature'
+          element={
+              <ResetPassword />
+            } />
+        <Route
+          path='/forget-password'
           element={
             <ProtectingRouteGuest user={user}>
-              <ResetPassword />
+              <ForgetPassword />
             </ProtectingRouteGuest>} />
+
 
         {/* User Routes */}
         <Route
