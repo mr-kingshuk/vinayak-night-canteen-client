@@ -3,12 +3,13 @@ import { useAuthContext } from '../../hooks/useAuthContext';
 import styles from './ItemTurnOff.module.css';
 
 const ItemTurnOff = ({ item }) => {
+    const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
     const { user } = useAuthContext();
     const [state, setState] = useState(item.isAvailable);
 
     const handleChange = async () => {
         setState(!state);
-        const response = await fetch(`http://localhost:3000/api/fooditems/itemsChange/${item._id}`, {
+        const response = await fetch(`${API_BASE_URL}/api/fooditems/itemsChange/${item._id}`, {
             method: 'PATCH',
             headers: {
                 'Authorization': `Bearer ${user.token}`

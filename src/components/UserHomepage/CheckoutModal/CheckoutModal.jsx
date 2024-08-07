@@ -6,6 +6,7 @@ import { useAuthContext } from '../../../hooks/useAuthContext.jsx';
 import { useOrderContext } from '../../../hooks/useOrderContext.jsx' 
 
 const CheckoutModal = ({ setCheckoutModal }) => {
+    const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
     const navigate = useNavigate();
     const modalRef = useRef();
     const { user, userDetails } = useAuthContext();
@@ -22,7 +23,7 @@ const CheckoutModal = ({ setCheckoutModal }) => {
         });
         order = {order : body};
 
-        const response = await fetch("http://localhost:3000/api/orders", {
+        const response = await fetch(`${API_BASE_URL}/api/orders`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -35,7 +36,7 @@ const CheckoutModal = ({ setCheckoutModal }) => {
             const { orderDocRef, total } = await response.json();
 
             //Getting API KEY of razorpay
-            const res = await fetch('http://localhost:3000/api/key');
+            const res = await fetch(`${API_BASE_URL}/api/key`);
             const {key} = await res.json();
 
             const options = {
@@ -45,7 +46,7 @@ const CheckoutModal = ({ setCheckoutModal }) => {
                 name: "Vinayak Foods",
                 description: "Food Order Receipt",
                 order_id: orderDocRef.razorpayOrderId, 
-                callback_url: `http://localhost:3000/api/orders/verification?orderId=${orderDocRef._id}`,
+                callback_url: `${API_BASE_URL}/api/orders/verification?orderId=${orderDocRef._id}`,
                 prefill: {
                     name: userDetails.name,
                     email: user.email,

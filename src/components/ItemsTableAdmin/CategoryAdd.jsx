@@ -4,6 +4,7 @@ import styles from './ItemTableAdmin.module.css';
 import { useAuthContext } from '../../hooks/useAuthContext.jsx';
 
 const CategoryAdd = ({ itemsCat }) => {
+    const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
     const { user } = useAuthContext();
     const { items, setItems } = itemsCat;
     const [name, setName] = useState("");
@@ -12,7 +13,7 @@ const CategoryAdd = ({ itemsCat }) => {
     const onSubmitHandler = async (e) => {
         e.preventDefault();
         setError(null);
-        const response = await fetch("http://localhost:3000/api/fooditems/category", {
+        const response = await fetch(`${API_BASE_URL}/api/fooditems/category`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

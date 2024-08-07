@@ -3,11 +3,12 @@ import { Link } from 'react-router-dom';
 import styles from './AdminNavbar.module.css';
 
 const AdminNavbar = ({ token }) => {
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
   const [isMerchant, setIsMerchant] = useState(null);
   const [isWorker, setIsWorker] = useState(null);
   useEffect(() => {
     const checkSuperAdmin = async () => {
-      const response = await fetch('http://localhost:3000/api/isMerchant', {
+      const response = await fetch(`${API_BASE_URL}/api/isMerchant`, {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`
@@ -26,7 +27,7 @@ const AdminNavbar = ({ token }) => {
     checkSuperAdmin();
 
     const checkAdmin = async () => {
-      const response = await fetch('http://localhost:3000/api/isWorker', {
+      const response = await fetch(`${API_BASE_URL}/api/isWorker`, {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`

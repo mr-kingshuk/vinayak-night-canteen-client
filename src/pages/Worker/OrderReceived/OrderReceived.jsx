@@ -5,12 +5,13 @@ import { useAuthContext } from '../../../hooks/useAuthContext.jsx';
 import ReceivedOrders from '../../../components/ReceivedOrders/ReceivedOrders.jsx';
 
 const OrderReceived = () => {
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
   const { user } = useAuthContext();
   const [orders, setOrders] = useState(null);
 
   useEffect(() => {
     const getOrder = async () => {
-      const response = await fetch(`http://localhost:3000/api/orders/receivedOrder`, {
+      const response = await fetch(`${API_BASE_URL}/api/orders/receivedOrder`, {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${user.token}`

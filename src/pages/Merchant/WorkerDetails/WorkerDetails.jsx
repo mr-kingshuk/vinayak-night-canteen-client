@@ -6,6 +6,7 @@ import StoreTiming from '../StoreTiming/StoreTiming.jsx';
 import { useAuthContext } from '../../../hooks/useAuthContext';
 
 const WorkerDetails = () => {
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
   const { user } = useAuthContext();
   const [email, setEmail] = useState("");
   const [error, setError] = useState(null);
@@ -13,7 +14,7 @@ const WorkerDetails = () => {
 
   useEffect(() => {
     const getWorker = async () => {
-      const response = await fetch('http://localhost:3000/api/workers', {
+      const response = await fetch(`${API_BASE_URL}/api/workers`, {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${user.token}`
@@ -35,7 +36,7 @@ const WorkerDetails = () => {
   const onSubmitHandler = async (e) => {
     e.preventDefault();
     setError(null);
-    const response = await fetch("http://localhost:3000/api/workers", {
+    const response = await fetch(`${API_BASE_URL}/api/workers`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

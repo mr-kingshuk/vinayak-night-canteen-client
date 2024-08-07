@@ -7,6 +7,7 @@ import { useAuthContext } from '../../../hooks/useAuthContext';
 import Order from '../../../components/CancelledOrder/Order';
 
 const OrderDetails = () => {
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
   const [totalPages, setTotalPages] = useState(0);
   const ITEM_PER_PAGE = 10;
   const [currentPage, setCurrentPage] = useState(1);
@@ -17,7 +18,7 @@ const OrderDetails = () => {
 
   const getOrder = async (page) => {
     const formattedDate = selectedDate ? selectedDate.toISOString() : '';
-    const response = await fetch(`http://localhost:3000/api/orders/deliver?date=${formattedDate}&page=${page}&per_page=${ITEM_PER_PAGE}`, {
+    const response = await fetch(`${API_BASE_URL}/api/orders/deliver?date=${formattedDate}&page=${page}&per_page=${ITEM_PER_PAGE}`, {
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${user.token}`

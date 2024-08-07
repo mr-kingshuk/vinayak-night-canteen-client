@@ -5,6 +5,7 @@ import AdminSidebar from '../components/AdminSidebar/AdminSidebar.jsx';
 import styles from './Admin.module.css';
 
 const ProtectingRouteMerchant = ({ component }) => {
+    const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
     const [isMerchant, setIsMerchant] = useState(null);
     const { user } = useAuthContext();
 
@@ -13,7 +14,7 @@ const ProtectingRouteMerchant = ({ component }) => {
             setIsMerchant(false);
         else {
             const checkAdmin = async () => {
-                const response = await fetch('http://localhost:3000/api/isMerchant', {
+                const response = await fetch(`${API_BASE_URL}/api/isMerchant`, {
                     method: 'GET',
                     headers: {
                         'Authorization': `Bearer ${user.token}`

@@ -3,6 +3,7 @@ import styles from './LoginSignup.module.css';
 import { useNavigate, useParams } from 'react-router-dom';
 
 const ResetPasswordBox = () => {
+    const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
     const { id, header, payload, signature } = useParams();
     const token = `${header}.${payload}.${signature}`;
     const navigate = useNavigate();
@@ -21,7 +22,7 @@ const ResetPasswordBox = () => {
         try {
             setIsLoading(true);
             setError(null);
-            const response = await fetch(`http://localhost:3000/api/password/reset-password/${id}/${token}`, {
+            const response = await fetch(`${API_BASE_URL}/api/password/reset-password/${id}/${token}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

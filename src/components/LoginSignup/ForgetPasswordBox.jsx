@@ -3,12 +3,13 @@ import { Link } from 'react-router-dom';
 import styles from './LoginSignup.module.css';
 
 const ForgetPasswordBox = () => {
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
   const [message, setMessage] = useState(null);
   const [email, setEmail] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch("http://localhost:3000/api/password/forget-password", {
+    const response = await fetch(`${API_BASE_URL}/api/password/forget-password`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

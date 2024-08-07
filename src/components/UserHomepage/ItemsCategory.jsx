@@ -16,6 +16,7 @@ const ItemsCategory = ({ items, openTime, closeTime }) => {
     const [checkoutModal, setCheckoutModal] = useState(false);
 
     const formatTime = (hour, min) => {
+        console.log(hour, min);
         let ampm = "";
         if (hour / 12) {
             ampm = "PM";
@@ -30,7 +31,7 @@ const ItemsCategory = ({ items, openTime, closeTime }) => {
         const formattedHour = hour.toString().padStart(2, '0');
         const formattedMin = min.toString().padStart(2, '0');
 
-        // Create the formatted time string in "hh:mm" format
+        // Create the formatted time string in "hh:mm am/pm" format
         return `${formattedHour}:${formattedMin} ${ampm}`;
     };
 

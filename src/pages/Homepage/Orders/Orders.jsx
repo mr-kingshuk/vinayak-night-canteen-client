@@ -6,6 +6,7 @@ import { useAuthContext } from '../../../hooks/useAuthContext';
 import Footer from '../../../components/Footer/Footer';
 
 const Orders = () => {
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
   const { user } = useAuthContext();
   const [orders, setOrders] = useState([]);
   const [page, setPage] = useState(1);
@@ -16,7 +17,7 @@ const Orders = () => {
   useEffect(() => {
     const getOrders = async () => {
       setLoading(true);
-      const response = await fetch(`http://localhost:3000/api/orders/orders?page=${page}&per_page=10`, {
+      const response = await fetch(`${API_BASE_URL}/api/orders/orders?page=${page}&per_page=10`, {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${user.token}`

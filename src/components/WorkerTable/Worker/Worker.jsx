@@ -4,10 +4,11 @@ import styles from './Worker.module.css';
 import { useAuthContext } from '../../../hooks/useAuthContext.jsx';
 
 const Worker = ({ worker, index, users }) => {
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
   const { user } = useAuthContext();
 
   const deleteHandler = async () => {
-    const response = await fetch(`http://localhost:3000/api/workers/${worker._id}`, {
+    const response = await fetch(`${API_BASE_URL}/api/workers/${worker._id}`, {
       method: 'DELETE',
       headers: {
         'Authorization': `Bearer ${user.token}`

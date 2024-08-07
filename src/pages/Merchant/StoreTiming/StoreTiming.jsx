@@ -4,6 +4,7 @@ import styles from './StoreTiming.module.css';
 import { useAuthContext } from '../../../hooks/useAuthContext';
 
 const StoreTiming = () => {
+    const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
     const { user } = useAuthContext();
     const [openTime, setOpenTime] = useState({ openHour: 0, openMin: 0 });
     const [closeTime, setCloseTime] = useState({ closeHour: 0, closeMin: 0 });
@@ -20,7 +21,7 @@ const StoreTiming = () => {
 
     useEffect(() => {
         const getTime = async () => {
-            const response = await fetch('http://localhost:3000/api/timing/time', {
+            const response = await fetch(`${API_BASE_URL}/api/timing/time`, {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${user.token}`
@@ -42,7 +43,7 @@ const StoreTiming = () => {
     const onSubmitHandler = async () => {
         const body = {...openTime, ...closeTime};
         setLoading(true);
-        const response = await fetch("http://localhost:3000/api/timing", {
+        const response = await fetch(`${API_BASE_URL}/api/timing`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

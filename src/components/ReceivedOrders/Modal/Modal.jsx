@@ -4,13 +4,14 @@ import styles from '../ReceivedOrders.module.css';
 import { useAuthContext } from '../../../hooks/useAuthContext.jsx';
 
 const Modal = ({ order, orders, setOrders }) => {
+    const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
     const { user } = useAuthContext();
     const [orderD, setOrderD] = useState(null);
 
     var total = 0;
     useEffect(() => {
         const getOrderD = async () => {
-            const response = await fetch(`http://localhost:3000/api/orders/order/${order._id}`, {
+            const response = await fetch(`${API_BASE_URL}/api/orders/order/${order._id}`, {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${user.token}`
@@ -29,7 +30,7 @@ const Modal = ({ order, orders, setOrders }) => {
     }, []);
 
     const handleDeliver = async () => {
-        const response = await fetch(`http://localhost:3000/api/orders/deliver/${order._id}`, {
+        const response = await fetch(`${API_BASE_URL}/api/orders/deliver/${order._id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',
@@ -48,7 +49,7 @@ const Modal = ({ order, orders, setOrders }) => {
     };
 
     const handleCancel = async () => {
-        const response = await fetch(`http://localhost:3000/api/orders/cancel/${order._id}`, {
+        const response = await fetch(`${API_BASE_URL}/api/orders/cancel/${order._id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',

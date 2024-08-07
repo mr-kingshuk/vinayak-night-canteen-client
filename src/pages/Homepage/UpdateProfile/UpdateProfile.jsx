@@ -6,6 +6,7 @@ import { useAuthContext } from '../../../hooks/useAuthContext';
 import Footer from '../../../components/Footer/Footer.jsx';
 
 const UpdateProfile = () => {
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
   const { dispatch, user, userDetails } = useAuthContext();
   const navigate = useNavigate();
   const [form, setForm] = useState({
@@ -29,7 +30,7 @@ const UpdateProfile = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await fetch("http://localhost:3000/api/users/profile", {
+    const response = await fetch(`${API_BASE_URL}/api/users/profile`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',

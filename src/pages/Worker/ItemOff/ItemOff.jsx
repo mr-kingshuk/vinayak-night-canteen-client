@@ -5,6 +5,7 @@ import ItemTurnOff from '../../../components/ItemTurnOff/ItemTurnOff.jsx';
 import { useAuthContext } from '../../../hooks/useAuthContext.jsx';
 
 const ItemOff = () => {
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
   const { user } = useAuthContext();
   const [items, setItems] = useState([]);
   const [queryItems, setQueryItems] = useState([]);
@@ -12,7 +13,7 @@ const ItemOff = () => {
 
   useEffect(() => {
     const getItemsCategory = async () => {
-      const response = await fetch('http://localhost:3000/api/fooditems/', {
+      const response = await fetch(`${API_BASE_URL}/api/fooditems/`, {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${user.token}`
