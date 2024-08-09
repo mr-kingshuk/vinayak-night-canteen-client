@@ -16,9 +16,8 @@ const ItemsCategory = ({ items, openTime, closeTime }) => {
     const [checkoutModal, setCheckoutModal] = useState(false);
 
     const formatTime = (hour, min) => {
-        console.log(hour, min);
         let ampm = "";
-        if (hour / 12) {
+        if (Math.floor(hour / 12)) {
             ampm = "PM";
             if (hour != 12)
                 hour %= 12;

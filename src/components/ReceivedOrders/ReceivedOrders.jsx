@@ -4,20 +4,9 @@ import Modal from './Modal/Modal.jsx';
 
 import moment from 'moment/moment';
 
-
 const ReceivedOrders = ({ order, orders, setOrders }) => {
     const modalRef = useRef();
     const [modal, setModal] = useState(false);
-
-    // useEffect(() => {
-    //     const handler = (event) => {
-    //       if (!modalRef.current.contains(event.target))
-    //         setModal(false);
-    //     };
-    
-    //     document.addEventListener("mousedown", handler);
-    //     return () => document.removeEventListener("mousedown", handler);
-    // });
 
     return (
         <div ref={modalRef}>
