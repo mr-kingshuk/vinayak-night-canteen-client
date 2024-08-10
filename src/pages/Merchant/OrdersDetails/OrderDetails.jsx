@@ -59,6 +59,8 @@ const OrderDetails = () => {
       getOrder(currentPage + 1);
   };
 
+  console.log('Date: ', selectedDate, ' orders: ', orders);
+
   return (
     <div className={styles.container}>
       <header>
