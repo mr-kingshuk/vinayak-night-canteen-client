@@ -17,6 +17,7 @@ const OrderDetails = () => {
   const arr = [];
 
   const getOrder = async (page) => {
+    setOrders(null);
     const formattedDate = selectedDate ? selectedDate.toISOString() : '';
     const response = await fetch(`${API_BASE_URL}/api/orders/deliver?date=${formattedDate}&page=${page}&per_page=${ITEM_PER_PAGE}`, {
       method: 'GET',

@@ -1,29 +1,32 @@
-import React, {useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import styles from './Order.module.css';
-import moment from 'moment/moment';
+import moment from 'moment-timezone';
 
 import Modal from './Modal.jsx';
 
 const Order = ({ order }) => {
     const modalRef = useRef();
     const [modal, setModal] = useState(false);
-    const date = moment(order.createdAt).format('Do MMMM, YYYY');
-    const time = moment(order.createdAt).format('h:mm A');
+    // Convert UTC time, given by MongoDB createdAt to India Standard Time (IST)
+    const indiaTime = moment.utc(order.createdAt).tz('Asia/Kolkata'); 
+
+    const date = indiaTime.format('Do MMMM, YYYY');
+    const time = indiaTime.format('h:mm A');
     const [dateTime, setDateTime] = useState({ date, time });
 
     useEffect(() => {
         const handler = (event) => {
-          if (!modalRef.current.contains(event.target))
-            setModal(false);
+            if (!modalRef.current.contains(event.target))
+                setModal(false);
         };
-    
+
         document.addEventListener("mousedown", handler);
         return () => document.removeEventListener("mousedown", handler);
-      });
+    });
 
     return (
         <div ref={modalRef}>
-            <div className={styles.rowout} onClick={() => !modal && setModal(!modal)} style={{background : modal ? "lightgray" : "white"}} >
+            <div className={styles.rowout} onClick={() => !modal && setModal(!modal)} style={{ background: modal ? "lightgray" : "white" }} >
                 <div className={styles.id}>{order.orderNumber}</div>
                 <div className={styles.name}>{order.userId.name}</div>
                 <div className={styles.phone}>{order.userId.phoneNo}</div>
@@ -31,7 +34,7 @@ const Order = ({ order }) => {
                 <div className={styles.time}>{dateTime.time}</div>
                 <div className={styles.hostel}>{order.hostel}</div>
             </div>
-            {modal && <Modal order={order}  /> }
+            {modal && <Modal order={order} />}
         </div>
     )
 };
