@@ -59,6 +59,7 @@ const StoreTiming = () => {
         }
         else {
             const errorData = await response.json();
+            alert(errorData.error);
             setLoading(false);
         }
     };
