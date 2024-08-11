@@ -16,6 +16,7 @@ const UpdateProfile = () => {
     hostel: ""
   });
   const [error, setError] = useState(null);
+  const [isLoading, setIsLoading] = useState(null);
 
   useEffect(() => {
     if (userDetails !== null)
@@ -29,7 +30,8 @@ const UpdateProfile = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    setIsLoading(true);
+    setError(null);
     const response = await fetch(`${API_BASE_URL}/api/users/profile`, {
       method: 'PATCH',
       headers: {
@@ -47,6 +49,7 @@ const UpdateProfile = () => {
 
       //update local state
       localStorage.setItem('userDetails', JSON.stringify(json));
+      setIsLoading(false);
 
       navigate('/');
 
@@ -54,6 +57,7 @@ const UpdateProfile = () => {
     else {
       const errorData = await response.json();
       setError(errorData);
+      setIsLoading(false);
     }
   };
 
@@ -116,7 +120,11 @@ const UpdateProfile = () => {
             <option value="GH">GH</option>
           </select>
         </div>
-        <button className={styles.submit_btn}>Update Profile</button>
+        <button 
+        className={styles.submit_btn} 
+        disabled={isLoading}
+        style={isLoading ? {cursor : "wait", opacity: "0.5"} : {}}
+      > {isLoading ? "Loading..." : "Update Profile"}</button>
         <div className={styles.redirect}>
           <div className={styles.separator}>
             <hr />
