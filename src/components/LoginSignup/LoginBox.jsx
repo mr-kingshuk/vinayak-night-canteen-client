@@ -55,7 +55,7 @@ const LoginBox = () => {
       <button 
         className={styles.submit_btn} 
         disabled={isLoading}
-        styles={isLoading ? {cursor : "wait"} : {cursor: "pointer"}}
+        style={isLoading ? {cursor : "wait", opacity: "0.5"} : {}}
       > {isLoading ? "Loading..." : "Login"}</button>
       <Link to = '/signup'>Don’t have an account yet? Sign Up</Link>
     </form>

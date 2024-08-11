@@ -79,7 +79,11 @@ const SignupBox = () => {
             alt="" onClick={() => setShowReEnterPassword(!showReEnterPassword)} 
             className={styles.signup_password}/>
         </div>
-        <button className={styles.submit_btn} disabled={isLoading}>Signup</button>
+        <button 
+        className={styles.submit_btn} 
+        disabled={isLoading}
+        style={isLoading ? {cursor : "wait", opacity: "0.5"} : {}}
+      > {isLoading ? "Loading..." : "Signup"}</button>
         <Link to = '/login'>Already have an account? Login</Link>
       </form>
     )
