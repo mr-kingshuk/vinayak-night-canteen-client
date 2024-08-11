@@ -8,7 +8,7 @@ const LoginBox = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const { login, error ,isLoading} = useLogin();
+  const { login, error , isLoading} = useLogin();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -52,7 +52,11 @@ const LoginBox = () => {
           alt="" onClick={togglePasswordVisibility} 
           className={styles.password}/>
       </div>
-      <button className={styles.submit_btn} disabled={isLoading}>Login</button>
+      <button 
+        className={styles.submit_btn} 
+        disabled={isLoading}
+        styles={isLoading ? {cursor : "wait"} : {cursor: "pointer"}}
+      > {isLoading ? "Loading..." : "Login"}</button>
       <Link to = '/signup'>Don’t have an account yet? Sign Up</Link>
     </form>
   )
