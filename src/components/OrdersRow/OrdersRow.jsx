@@ -5,6 +5,8 @@ import moment from 'moment/moment';
 
 const OrdersRow = ({ order }) => {
     const navigate = useNavigate();
+
+    //Convert UTC time of MongoDb createdAt to IST
     const date = moment(order.createdAt).format('Do MMMM, YYYY');
     const time = moment(order.createdAt).format('h:mm A');
     const [dateTime, setDateTime] = useState({ date, time });

@@ -1,17 +1,16 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styles from './Order.module.css';
-import moment from 'moment-timezone';
+import moment from 'moment/moment';
 
 import Modal from './Modal.jsx';
 
 const Order = ({ order }) => {
     const modalRef = useRef();
     const [modal, setModal] = useState(false);
-    // Convert UTC time, given by MongoDB createdAt to India Standard Time (IST)
-    const indiaTime = moment.utc(order.createdAt).tz('Asia/Kolkata'); 
 
-    const date = indiaTime.format('Do MMMM, YYYY');
-    const time = indiaTime.format('h:mm A');
+    //Convert UTC time of MongoDb createdAt to IST 
+    const date = moment(order.createdAt).format('Do MMMM, YYYY');
+    const time = moment(order.createdAt).format('h:mm A');
     const [dateTime, setDateTime] = useState({ date, time });
 
     useEffect(() => {

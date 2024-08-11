@@ -6,7 +6,7 @@ export const useOrderContext = () =>{
     const context = useContext(OrderContext);
 
     if(!context){
-        throw Error('useOrderContext must be used inside an AuthContextProvider');
+        throw Error('useOrderContext must be used inside an OrderContextProvider');
     }
 
     return context;

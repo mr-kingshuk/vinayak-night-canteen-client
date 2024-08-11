@@ -25,6 +25,8 @@ const Order = () => {
       })
       if (response.ok) {
         const json = await response.json();
+
+        //Convert UTC time of MongoDb createdAt to IST
         const date = moment(json.order.createdAt).format('Do MMMM, YYYY');
         const time = moment(json.order.createdAt).format('h:mm A');
         setDateTime({ date: date, time: time });

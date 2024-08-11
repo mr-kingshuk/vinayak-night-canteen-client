@@ -17,11 +17,10 @@ const ItemTurnOff = ({ item }) => {
         })
         if (response.ok) {
             const json = await response.json();
-            setItems(json.items);
         }
         else {
             const json = await response.json();
-            setItems(json);
+            console.log(json);
         }
     }
 
