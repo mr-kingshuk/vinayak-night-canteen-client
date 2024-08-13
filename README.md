@@ -15,6 +15,10 @@ Server-side Repository is present at [vinayak-night-canteen-server](https://gith
 7. [Environment Variables](#environment-variables)
 8. [Workflow Diagrams](#workflow-diagrams)
 9. [Pages](#pages)
+    - [Guest Pages](#guest-pages)
+    - [User Pages](#user-pages)
+    - [Worker Pages](#worker-pages)
+    - [Merchant Pages](#merchant-pages)
 10. [Central State Management](#central-state-management)
 11. [Custom Auth Hooks](#custom-auth-hooks)
 12. [Contributing](#contributing)    
@@ -43,6 +47,7 @@ To address these challenges, I developed a comprehensive Night Canteen Website f
 - <ins>**Central State Management**</ins> to efficiently handle the state of User Details and Order Details, enabling users to add items to the cart from both the Menu HomePage and the Order Summary Page.
 - <ins>**Use of localStorage**</ins> to persist User and Order Details, allowing for easy access when the User returns to the website later.
 - A robust <ins>**CMS portal**</ins> for Merchants to manage menu items and store timings, along with a <ins>**CRM portal**</ins> to track all orders, including cancelled and delivered orders.
+- <ins>**Responsive Design**</ins> for all three user roles, ensuring a seamless experience across devices, whether on desktop, tablet, or mobile.
 
 This project highlights advanced web development skills with a focus on real-time communication, payment integration, and efficient store management.
 
@@ -150,16 +155,139 @@ To run this project, you will need to add the following environment variables to
 The following diagrams illustrate the communication between the client and server for two major workflows utilized in this project.
 
 ### Razorpay Payment Verification Workflow
-![Razorpay Payment Verification Workflow](public/Razorpay-Payment-Verification-Workflow.JPG)
+![Razorpay Payment Verification Workflow](public/readme/Razorpay-Payment-Verification-Workflow.JPG)
 > *This diagram depicts the two-step verification process between the client and server for Razorpay payment verification.*
 
 ### Reset Password Workflow
-![Reset Password Workflow](public/Reset-Password-WorkFlow.JPG)
+![Reset Password Workflow](public/readme/Reset-Password-WorkFlow.JPG)
 > *This diagram illustrates the two-step verification process between the client and server for the reset password functionality.*
 
+### Pages
 
+## Guest Pages
 
-11. [Contributing](#contributing) 
+<ins>1. Signup Page</ins>
+
+![Reset Password Workflow](public/readme/Reset-Password-WorkFlow.JPG)
+
+> *This diagram illustrates the two-step verification process between the client and server for the reset password functionality.*
+
+<ins>2. Login Page</ins>
+
+![Reset Password Workflow](public/readme/Reset-Password-WorkFlow.JPG)
+
+> *This diagram illustrates the two-step verification process between the client and server for the reset password functionality.*
+
+<ins>3. Forget Password Page</ins>
+
+![Reset Password Workflow](public/readme/Reset-Password-WorkFlow.JPG)
+
+> *This diagram illustrates the two-step verification process between the client and server for the reset password functionality.*
+
+<ins>4. Reset Password Page</ins>
+
+![Reset Password Workflow](public/readme/Reset-Password-WorkFlow.JPG)
+
+> *This diagram illustrates the two-step verification process between the client and server for the reset password functionality.*
+
+## User Pages
+
+<ins>1. HomePage </ins>
+
+![Reset Password Workflow](public/readme/Reset-Password-WorkFlow.JPG)
+
+> *This diagram illustrates the two-step verification process between the client and server for the reset password functionality.*
+
+<ins>2. Update Profile Page </ins>
+
+![Reset Password Workflow](public/readme/Reset-Password-WorkFlow.JPG)
+
+> *This diagram illustrates the two-step verification process between the client and server for the reset password functionality.*
+
+<ins>3. Your Orders Page </ins>
+
+![Reset Password Workflow](public/readme/Reset-Password-WorkFlow.JPG)
+
+> *This diagram illustrates the two-step verification process between the client and server for the reset password functionality.*
+
+<ins>4. Single Order Page </ins>
+
+![Reset Password Workflow](public/readme/Reset-Password-WorkFlow.JPG)
+
+> *This diagram illustrates the two-step verification process between the client and server for the reset password functionality.*
+
+## Worker Pages 
+
+<ins>1. Received Order Page </ins>
+
+![Reset Password Workflow](public/readme/Reset-Password-WorkFlow.JPG)
+
+> *This diagram illustrates the two-step verification process between the client and server for the reset password functionality.*
+
+<ins>2. Items On/Off Page </ins>
+
+![Reset Password Workflow](public/readme/Reset-Password-WorkFlow.JPG)
+
+> *This diagram illustrates the two-step verification process between the client and server for the reset password functionality.*
+
+## Merchant Pages
+
+<ins>1. Order Details Page </ins>
+
+![Reset Password Workflow](public/readme/Reset-Password-WorkFlow.JPG)
+
+> *This diagram illustrates the two-step verification process between the client and server for the reset password functionality.*
+
+<ins>2. Store Details Page </ins>
+
+![Reset Password Workflow](public/readme/Reset-Password-WorkFlow.JPG)
+
+> *This diagram illustrates the two-step verification process between the client and server for the reset password functionality.*
+
+<ins>3. Cancelled Orders Page </ins>
+
+![Reset Password Workflow](public/readme/Reset-Password-WorkFlow.JPG)
+
+> *This diagram illustrates the two-step verification process between the client and server for the reset password functionality.*
+
+<ins>4. Items and Category Page </ins>
+
+![Reset Password Workflow](public/readme/Reset-Password-WorkFlow.JPG)
+
+> *This diagram illustrates the two-step verification process between the client and server for the reset password functionality.*
+
+### Central State Management
+
+Central State Management in this project is implemented using React's Context API and the `useReducer` hook, providing a way to efficiently manage and share state across components. This documentation covers two main contexts used for state management: **AuthContext** and **OrderContext**.
+
+<ins>1. AuthContext</ins>
+
+The **AuthContext** manages user authentication state, including login, signup, logout, and updates to user details.
+
+| **Action** | **Description**                                                |
+|------------|---------------------------------------------------------------|
+| **LOGIN**  | Updates the state with the authenticated user's information.  |
+| **SIGNUP** | Registers a new user and updates the state.                   |
+| **LOGOUT** | Resets the user and user details to `null`.                   |
+| **UPDATE** | Updates the user's details while preserving their identity.    |
+
+- **Reducer and Provider**: The `authReducer` handles state transitions based on dispatched actions, while the **AuthContextProvider** wraps the application to provide authentication state and dispatch function to its children. It initializes the state from `localStorage` to maintain the user's authentication status across sessions.
+
+<ins>2. OrderContext</ins>
+
+The **OrderContext** manages the state of order items, allowing components to modify orders.
+
+| **Action**       | **Description**                                                          |
+|------------------|-------------------------------------------------------------------------|
+| **ADD**          | Initializes the order with a given array of items.                     |
+| **INCREMENT**    | Increases the quantity of a specific item.                              |
+| **DECREMENT**    | Decreases the quantity, removing the item if it reaches zero.           |
+| **REMOVE**       | Clears all items from the order.                                       |
+| **REMOVE_SINGLE**| Removes a specific item from the order.                                 |
+
+- **Reducer and Provider**: The `orderReducer` handles state changes based on dispatched actions, ensuring the order state updates correctly. The **OrderContextProvider** wraps the application to provide order state and dispatch function to its children, utilizing `localStorage` to persist the order state across sessions.
+
+### Custom Auth Hooks
 
 ## Contributing
 
