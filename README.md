@@ -1,7 +1,7 @@
 
 # Vinayak Canteen Website
 
-Server-side Repository is present at [vinayak-night-canteen-server](https://github.com/mr-kingshuk/vinayak-night-canteen-server)
+Server-side Repository is present at <a href="https://github.com/mr-kingshuk/vinayak-night-canteen-server" target="_blank" rel="noopener noreferrer">vinayak-night-canteen-server</a> 
 
 ![Project Showcase - Website Screenshot](public/readme/Website-preview.JPG)
 
@@ -60,7 +60,7 @@ This section highlights the planning and design process behind the project. The 
 
 ![Photo of Figma Design](public/readme/Design-Figma.JPG)
 
-> *View the complete design file on Figma: [Figma Design File Link](https://www.figma.com/design/VORJsttgxswEcg9Lm5de9i/Vinayak-Canteen?node-id=0-1&m=dev&t=Zu7Ae84oje7QdQXZ-1)*
+> *View the complete design file on Figma: <a href="https://www.figma.com/design/VORJsttgxswEcg9Lm5de9i/Vinayak-Canteen?node-id=0-1&m=dev&t=Zu7Ae84oje7QdQXZ-1" target="_blank" rel="noopener noreferrer">Figma Design File Link</a>*
 
 ## Running Locally
 
@@ -150,16 +150,16 @@ To run this project, you will need to add the following environment variables to
 The following diagrams illustrate the communication between the client and server for two major workflows utilized in this project.
 
 ### Razorpay Payment Verification Workflow
-![Razorpay Payment Verification Workflow](public/Razorpay-Payment-Verification-Workflow.JPG)
+![Razorpay Payment Verification Workflow](public/readme/Razorpay-Payment-Verification-Workflow.JPG)
 > *This diagram depicts the two-step verification process between the client and server for Razorpay payment verification.*
 
 ### Reset Password Workflow
-![Reset Password Workflow](public/Reset-Password-WorkFlow.JPG)
+![Reset Password Workflow](public/readme/Reset-Password-WorkFlow.JPG)
 > *This diagram illustrates the two-step verification process between the client and server for the reset password functionality.*
 
 
 
-11. [Contributing](#contributing) 
+
 
 ## Contributing
 
