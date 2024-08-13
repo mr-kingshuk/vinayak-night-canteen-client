@@ -287,7 +287,7 @@ The **OrderContext** manages the state of order items, allowing components to mo
 
 - **Reducer and Provider**: The `orderReducer` handles state changes based on dispatched actions, ensuring the order state updates correctly. The **OrderContextProvider** wraps the application to provide order state and dispatch function to its children, utilizing `localStorage` to persist the order state across sessions.
 
-11. [Contributing](#contributing) 
+## Custom Auth Hooks
 
 ## Contributing
 
