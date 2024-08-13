@@ -41,9 +41,9 @@ Addressing these issues is crucial for improving the operational environment for
 ## Solution Provided by This Software
 To address these challenges, I developed a comprehensive Night Canteen Website for Vinayak Canteen. The platform features a 3-tier user role system, including **`User`**, **`Worker`**, and **`Merchant`** profiles. Key functionalities include:
 
-- <ins>**Integrated Razorpay**</ins> for secure payments, ensuring a smooth transaction process.
-- <ins>**Cron jobs**</ins> to manage item availability based on store timings, automatically toggling items off when the store closes and on when it opens.
-- <ins>**Manual control of items**</ins> through the Worker interface, allowing for dynamic menu management.
+- <ins>**Integrated Razorpay**</ins> for secure payments, ensuring a smooth transaction process, ensuring pre-payment of orders, to allow order confirmation, from both Store as well as Student side
+- <ins>**Cron jobs**</ins> to manage item availability based on store timings, automatically toggling items off when the store closes and on when it opens, managed by the store owner.
+- <ins>**Manual control of items**</ins> through the Worker interface, allowing for dynamic menu management, which is visible to the Store Owner as well. 
 - <ins>**Central State Management**</ins> to efficiently handle the state of User Details and Order Details, enabling users to add items to the cart from both the Menu HomePage and the Order Summary Page.
 - <ins>**Use of localStorage**</ins> to persist User and Order Details, allowing for easy access when the User returns to the website later.
 - A robust <ins>**CMS portal**</ins> for Merchants to manage menu items and store timings, along with a <ins>**CRM portal**</ins> to track all orders, including cancelled and delivered orders.
