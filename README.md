@@ -168,55 +168,37 @@ The following diagrams illustrate the communication between the client and serve
 
 <ins>1. Signup Page</ins>
 
-![Reset Password Workflow](public/readme/Reset-Password-WorkFlow.JPG)
+![Signup Page](https://drive.google.com/file/d/1F2CaBrD7Bc_BkduNyoGdJ9f-h3tvsNzU/view?usp=sharing)
 
-> *This diagram illustrates the two-step verification process between the client and server for the reset password functionality.*
+> *This video illustrates the Signup Page and all its error handling in a brief manner.*
 
 <ins>2. Login Page</ins>
 
-![Reset Password Workflow](public/readme/Reset-Password-WorkFlow.JPG)
+![Login Page](https://drive.google.com/file/d/1YFbc9WLoywmVAO_w0AeBiYz-E417iJDJ/view?usp=sharing)
 
-> *This diagram illustrates the two-step verification process between the client and server for the reset password functionality.*
+> *This video illustrates the Login Page and all its error handling in a brief manner.*
 
-<ins>3. Forget Password Page</ins>
+<ins>3. Reset and Forget Password Pages</ins>
 
-![Reset Password Workflow](public/readme/Reset-Password-WorkFlow.JPG)
+![Reset Password](https://drive.google.com/file/d/1JLezC409y2JFJMazAuk-iSld59gIa-Gb/view?usp=sharing)
 
-> *This diagram illustrates the two-step verification process between the client and server for the reset password functionality.*
-
-<ins>4. Reset Password Page</ins>
-
-![Reset Password Workflow](public/readme/Reset-Password-WorkFlow.JPG)
-
-> *This diagram illustrates the two-step verification process between the client and server for the reset password functionality.*
+> *This video illustrates the forgot password page, the rest email, and the subsequent redirection to the rest page and their respective error handling.*
 
 ## User Pages
 
-<ins>1. HomePage </ins>
+<ins>1. HomePage, Update Profile Pgae, Order Page </ins>
 
-![Reset Password Workflow](public/readme/Reset-Password-WorkFlow.JPG)
+![Homepage](https://drive.google.com/file/d/1aZT2Vgirri1PGprUuBd62TnM_WV4Ky09/view?usp=sharing)
 
-> *This diagram illustrates the two-step verification process between the client and server for the reset password functionality.*
+> *This video illustrates the homepage, the cart feature, the Profile Update page which is necesary before every order, and for 1st time users, Razorpay Payment Gateway and finally the Order page on succesful order placement.*
 
-<ins>2. Update Profile Page </ins>
+<ins>2. Order(s) Page and Order Page </ins>
 
-![Reset Password Workflow](public/readme/Reset-Password-WorkFlow.JPG)
+![Orders Page](https://drive.google.com/file/d/1mo3YX7kd3gOPMDBfbChECiIl5uzwOK3p/view?usp=sharing)
 
-> *This diagram illustrates the two-step verification process between the client and server for the reset password functionality.*
+> *This video shows the Orders Page which has an <ins>Infinite Scroll Feature</ins> and the subsequent redirection to the Order page, on clciking any order.*
 
-<ins>3. Your Orders Page </ins>
-
-![Reset Password Workflow](public/readme/Reset-Password-WorkFlow.JPG)
-
-> *This diagram illustrates the two-step verification process between the client and server for the reset password functionality.*
-
-<ins>4. Single Order Page </ins>
-
-![Reset Password Workflow](public/readme/Reset-Password-WorkFlow.JPG)
-
-> *This diagram illustrates the two-step verification process between the client and server for the reset password functionality.*
-
-## Worker Pages 
+<!-- ## Worker Pages 
 
 <ins>1. Received Order Page </ins>
 
@@ -254,7 +236,7 @@ The following diagrams illustrate the communication between the client and serve
 
 ![Reset Password Workflow](public/readme/Reset-Password-WorkFlow.JPG)
 
-> *This diagram illustrates the two-step verification process between the client and server for the reset password functionality.*
+> *This diagram illustrates the two-step verification process between the client and server for the reset password functionality.* -->
 
 ## Central State Management
 
