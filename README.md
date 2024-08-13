@@ -1,7 +1,7 @@
 
 # Vinayak Canteen Website
 
-Server-side Repository is present at [vinayak-night-canteen-server](https://github.com/mr-kingshuk/vinayak-night-canteen-server)
+Server-side Repository is present at <a href="https://github.com/mr-kingshuk/vinayak-night-canteen-server" target="_blank" rel="noopener noreferrer">vinayak-night-canteen-server</a> 
 
 ![Project Showcase - Website Screenshot](public/readme/Website-preview.JPG)
 
@@ -65,7 +65,7 @@ This section highlights the planning and design process behind the project. The 
 
 ![Photo of Figma Design](public/readme/Design-Figma.JPG)
 
-> *View the complete design file on Figma: [Figma Design File Link](https://www.figma.com/design/VORJsttgxswEcg9Lm5de9i/Vinayak-Canteen?node-id=0-1&m=dev&t=Zu7Ae84oje7QdQXZ-1)*
+> *View the complete design file on Figma: <a href="https://www.figma.com/design/VORJsttgxswEcg9Lm5de9i/Vinayak-Canteen?node-id=0-1&m=dev&t=Zu7Ae84oje7QdQXZ-1" target="_blank" rel="noopener noreferrer">Figma Design File Link</a>*
 
 ## Running Locally
 
@@ -287,7 +287,7 @@ The **OrderContext** manages the state of order items, allowing components to mo
 
 - **Reducer and Provider**: The `orderReducer` handles state changes based on dispatched actions, ensuring the order state updates correctly. The **OrderContextProvider** wraps the application to provide order state and dispatch function to its children, utilizing `localStorage` to persist the order state across sessions.
 
-### Custom Auth Hooks
+11. [Contributing](#contributing) 
 
 ## Contributing
 
