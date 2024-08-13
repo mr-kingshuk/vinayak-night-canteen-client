@@ -256,9 +256,9 @@ The following diagrams illustrate the communication between the client and serve
 
 > *This diagram illustrates the two-step verification process between the client and server for the reset password functionality.*
 
-### Central State Management
+## Central State Management
 
-Central State Management in this project is implemented using React's Context API and the `useReducer` hook, providing a way to efficiently manage and share state across components. This documentation covers two main contexts used for state management: **AuthContext** and **OrderContext**.
+Central State Management in this project is implemented using React's `Context API` and the `useReducer` hook, providing a way to efficiently manage and share state across components. This documentation covers two main contexts used for state management: <ins>**AuthContext**</ins> and <ins>**OrderContext**</ins>.
 
 <ins>1. AuthContext</ins>
 
@@ -288,6 +288,20 @@ The **OrderContext** manages the state of order items, allowing components to mo
 - **Reducer and Provider**: The `orderReducer` handles state changes based on dispatched actions, ensuring the order state updates correctly. The **OrderContextProvider** wraps the application to provide order state and dispatch function to its children, utilizing `localStorage` to persist the order state across sessions.
 
 ## Custom Auth Hooks
+
+This project includes three custom hooks that utilize the **AuthContext** to manage user authentication: **useLogin**, **useLogout**, and **useSignup**. Each hook provides specific functionalities to streamline authentication processes in the application.
+
+### 1. **useLogin**
+
+The **useLogin** hook handles the user login process. The **login(email, password)** function, which the hook returns sends a POST request to the login API endpoint. If the login is successful, it updates the local storage with the user's information and dispatches the login action to the AuthContext. This hook also returns `error` which contains value of any error encountered during the login attempt and `isLoading` which indicates whether the login process is ongoing.
+
+### 2. **useSignup**
+
+The **useSignup** hook manages user registration. The **signup(email, password, reEnterPassword, name)** function, which the hook returns, sends a POST request to the signup API endpoint. Upon successful registration, it saves the user information to local storage and dispatches the signup action to the AuthContext. This hook also returns `error` which contains value of any error encountered during the signup attempt and `isLoading` which indicates whether the signup process is ongoing.
+
+### 3. **useLogout**
+
+The **useLogout** hook manages user logout. The function **logout()**, which is returned from this hook removes user information and order data from local storage. It dispatches a logout action to the AuthContext and a remove action to the OrderContext.
 
 ## Contributing
 
