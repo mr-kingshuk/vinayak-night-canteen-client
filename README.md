@@ -42,6 +42,7 @@ Addressing these issues is crucial for improving the operational environment for
 To address these challenges, I developed a comprehensive Night Canteen Website for Vinayak Canteen. The platform features a 3-tier user role system, including **`User`**, **`Worker`**, and **`Merchant`** profiles. Key functionalities include:
 
 - <ins>**Integrated Razorpay**</ins> for secure payments, ensuring a smooth transaction process, ensuring pre-payment of orders, to allow order confirmation, from both Store as well as Student side
+- <ins>**WebSockets**</ins> using socket.io for real-time communication, enabling Workers to receive and manage orders instantly.)
 - <ins>**Cron jobs**</ins> to manage item availability based on store timings, automatically toggling items off when the store closes and on when it opens, managed by the store owner.
 - <ins>**Manual control of items**</ins> through the Worker interface, allowing for dynamic menu management, which is visible to the Store Owner as well. 
 - <ins>**Central State Management**</ins> to efficiently handle the state of User Details and Order Details, enabling users to add items to the cart from both the Menu HomePage and the Order Summary Page.
@@ -131,7 +132,8 @@ To set up the project locally, follow these steps:
     "react-datepicker": "^4.23.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.17.0",
-    "react-scroll": "^1.9.0"
+    "react-scroll": "^1.9.0",
+    "socket.io-client": "^4.7.5"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",

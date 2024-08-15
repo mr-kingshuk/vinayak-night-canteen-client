@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import io from 'socket.io-client';
 import styles from './OrderReceived.module.css';
 
 import { useAuthContext } from '../../../hooks/useAuthContext.jsx';
@@ -27,22 +28,39 @@ const OrderReceived = () => {
       }
     }
     getOrder();
-  }, [])
-  
+  }, []);
+  console.log(orders);
+
+  useEffect(() => {
+    const socket = io(API_BASE_URL);
+
+    socket.on('connect', () => {
+      console.log('Connected to WebSocket server');
+    });
+
+    socket.on('newOrder', (order) => {
+      setOrders((prevOrders) => [order, ...prevOrders]);
+    });
+
+    return () => {
+      socket.disconnect();
+    };
+  }, []);
+
   return (
     <div className={styles.container}>
       <h1> Order Received</h1>
       <div className={styles.table}>
-          <div className={styles.header}>
-            <div className={styles.id}>Order Id</div>
-            <div className={styles.name}>Name</div>
-            <div className={styles.phone}>Phone No.</div>
-            <div className={styles.time}>Order Time</div>
-            <div className={styles.hostel}>Hostel</div>
-          </div>
-          <hr />
-          {orders && orders.map((order) => <ReceivedOrders order={order} orders={orders} setOrders={setOrders} key={order._id}/> )}
-      </div> 
+        <div className={styles.header}>
+          <div className={styles.id}>Order Id</div>
+          <div className={styles.name}>Name</div>
+          <div className={styles.phone}>Phone No.</div>
+          <div className={styles.time}>Order Time</div>
+          <div className={styles.hostel}>Hostel</div>
+        </div>
+        <hr />
+        {orders && orders.map((order) => <ReceivedOrders order={order} orders={orders} setOrders={setOrders} key={order._id} />)}
+      </div>
     </div>
   )
 };
