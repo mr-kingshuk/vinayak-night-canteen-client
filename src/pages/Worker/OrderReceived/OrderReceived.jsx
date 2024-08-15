@@ -29,7 +29,6 @@ const OrderReceived = () => {
     }
     getOrder();
   }, []);
-  console.log(orders);
 
   useEffect(() => {
     const socket = io(API_BASE_URL);
