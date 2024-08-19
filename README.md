@@ -85,7 +85,7 @@ To set up the project locally, follow these steps:
 1. **Fill the `.env` file**: 
    - Use the `template.env` file as a reference to configure your environment variables.
 
-2. **Set up the database connection in server**:
+2. **Set up the database connection in the server**:
    - Add the database connection string for both production and development environments.
    - Set `NODE_ENV` to `development`. (When pushing code to production, change `NODE_ENV` to `production`.)
 
@@ -171,43 +171,48 @@ The following diagrams illustrate the communication between the client and serve
 
 <ins>1. Signup Page</ins>
 
-### **Note:** The following video contains *audio commentary* explaining the features and functionality. Please unmute the video for a complete understanding.
+### **Note:** The following video contains *audio commentary* explaining the features and functionality. 
+### Please unmute the video for a complete understanding.
 
-https://github.com/user-attachments/assets/4807dcd5-ae65-4220-88ae-0bf61bc8290b
+https://github.com/user-attachments/assets/98868557-24e2-40f1-8e32-590964f6ef1b
 
 > *This video illustrates the Signup Page and all its error handling in a brief manner.*
 
 <ins>2. Login Page</ins>
 
-### **Note:** The following video contains *audio commentary* explaining the features and functionality. Please unmute the video for a complete understanding.
+### **Note:** The following video contains *audio commentary* explaining the features and functionality.
+### Please unmute the video for a complete understanding.
 
-https://github.com/user-attachments/assets/bc863006-c3e7-4f56-a3ef-74f1f5464212
+https://github.com/user-attachments/assets/d3c0553b-ebad-4724-8cf3-749fb4fd628f
 
 > *This video illustrates the Login Page and all its error handling in a brief manner.*
 
 <ins>3. Reset and Forget Password Pages</ins>
 
-### **Note:** The following video contains *audio commentary* explaining the features and functionality. Please unmute the video for a complete understanding.
+### **Note:** The following video contains *audio commentary* explaining the features and functionality. 
+### Please unmute the video for a complete understanding.
 
-https://github.com/user-attachments/assets/b086f2ff-aae4-4277-a8f4-80c7005bd513
+https://github.com/user-attachments/assets/74359304-beeb-4841-8768-51839a7bda0f
 
 > *This video illustrates the forgot password page, the rest email, and the subsequent redirection to the rest page and their respective error handling.*
 
 ### User Pages
 
-<ins>1. HomePage, Update Profile Pgae, Order Page </ins>
+<ins>1. HomePage, Update Profile Page, Order Page </ins>
 
-### **Note:** The following video contains *audio commentary* explaining the features and functionality. Please unmute the video for a complete understanding.
+### **Note:** The following video contains *audio commentary* explaining the features and functionality. 
+### Please unmute the video for a complete understanding.
 
-https://github.com/user-attachments/assets/d4dc2915-2d57-4096-984f-542efc2124fa
+https://github.com/user-attachments/assets/2937f12f-dac0-421e-a19a-be0416b323b9
 
-> *This video illustrates the homepage, the cart feature, the Profile Update page which is necessary before every order, Razorpay Payment Gateway and finally the Order page on succesful order placement.*
+> *This video illustrates the homepage, the cart feature, the Profile Update page which is necessary before every order, Razorpay Payment Gateway and finally the Order page on successful order placement.*
 
 <ins>2. Order(s) Page and Order Page </ins>
 
-### **Note:** The following video contains *audio commentary* explaining the features and functionality. Please unmute the video for a complete understanding.
+### **Note:** The following video contains *audio commentary* explaining the features and functionality. 
+### Please unmute the video for a complete understanding.
 
-https://github.com/user-attachments/assets/b3371da3-7b9f-42ae-8ae6-d7b674231d39
+https://github.com/user-attachments/assets/1010d96f-1007-4f1e-8ac2-ec663566cf75
 
 > *This video shows the Orders Page which has an <ins>Infinite Scroll Feature</ins> and the subsequent redirection to the Order page, on clciking any order.*
 
@@ -215,62 +220,59 @@ https://github.com/user-attachments/assets/b3371da3-7b9f-42ae-8ae6-d7b674231d39
 
 <ins>1. WebSocket Received Order Page </ins>
 
-### **Note:** The following video contains *audio commentary* explaining the features and functionality. Please unmute the video for a complete understanding.
+### **Note:** The following video contains *audio commentary* explaining the features and functionality. 
+### Please unmute the video for a complete understanding.
 
-https://github.com/user-attachments/assets/1546427a-1973-4267-bbb8-4418c211c90c
+https://github.com/user-attachments/assets/6119e00e-42f9-4d62-b468-1d6d0125bbd1
 
-> *This video demonstrates the real-time communication system for handling orders on the Worker side. It shows how orders placed by various users are received instantly by Workers and outlines the process for managing these orders, including options for delivering or canceling them.*
+> *This video demonstrates the real-time communication system for handling orders on the Worker side. It shows how orders placed by various users are received instantly by Workers and outlines the process for managing these orders, including options for delivering or cancelling them.*
 
-<ins>2. Items On/Off Page </ins>
+<ins>2. Items On/Off Page, along with in the middle of Order PLacing by User</ins>
 
-### **Note:** The following video contains *audio commentary* explaining the features and functionality. Please unmute the video for a complete understanding.
+### **Note:** The following video contains *audio commentary* explaining the features and functionality. 
+### Please unmute the video for a complete understanding.
 
-https://github.com/user-attachments/assets/42c2947b-3050-4cc1-adce-915510398f42
+https://github.com/user-attachments/assets/b525f1e3-a9de-4ef4-bad6-b303a49c1c69
 
-
-> *This video shows how items can be turn on and off from the worker side, incase the tsock of the items has depleted or some other reasons.*
-
-<ins>3. Items On/Off Feature, in middle of Order PLacing by User </ins>
-
-### **Note:** The following video contains *audio commentary* explaining the features and functionality. Please unmute the video for a complete understanding.
-
-https://github.com/user-attachments/assets/96cc61bf-9908-4d63-91a3-aa0d2a2f830f
-
-> *This video shows what happens if an item is turned of and the User places an order with the item being turned off.*
+> *This video shows how items can be turned on and off from the worker's side, in case the stock of the items has depleted or for some other reasons. This video shows what happens if an item is turned off and the User places an order with the item being turned off. *
 
 ### Merchant Pages
 
 <ins>1. Order Details( Delivered and Cancelled Orders ) Page </ins>
 
-### **Note:** The following video contains *audio commentary* explaining the features and functionality. Please unmute the video for a complete understanding.
+### **Note:** The following video contains *audio commentary* explaining the features and functionality.
+### Please unmute the video for a complete understanding.
 
-https://github.com/user-attachments/assets/8f9f1426-3092-465c-9689-ce2db92c9954
+https://github.com/user-attachments/assets/d9354f3e-1717-421e-9cff-83b2ed155558
 
-> *This video demonstrates how delivered and canceled orders are displayed on the Merchant side in a paginated format, with 10 orders per page. Delivered orders are sorted by date, allowing Merchants to view the orders from a specific day efficiently.*
+> *This video demonstrates how delivered and cancelled orders are displayed on the Merchant side in a paginated format, with 10 orders per page. Delivered orders are sorted by date, allowing Merchants to view the orders from a specific day efficiently.*
 
 <ins>2. Store Timing Section </ins>
 
-### **Note:** The following video contains *audio commentary* explaining the features and functionality. Please unmute the video for a complete understanding.
+### **Note:** The following video contains *audio commentary* explaining the features and functionality. 
+### Please unmute the video for a complete understanding.
 
-https://github.com/user-attachments/assets/db5e1172-64ce-44b6-b38e-6ae28c6d2915
+https://github.com/user-attachments/assets/eeb3362c-d72b-41c0-8450-0c32ac34afe5
 
-> *this video demonstarted how the website automates store operations by scheduling item availability based on store opening and close time, resetting order numbers, and adjusting item statuses in real-time based on updated store timings in IST.* 
+> *this video demonstrated how the website automates store operations by scheduling item availability based on store opening and closing time, resetting order numbers, and adjusting item statuses in real-time based on updated store timings in IST.* 
 
 <ins>3. Worker Details Section </ins>
 
-### **Note:** The following video contains *audio commentary* explaining the features and functionality. Please unmute the video for a complete understanding.
+### **Note:** The following video contains *audio commentary* explaining the features and functionality. 
+### Please unmute the video for a complete understanding.
 
-https://github.com/user-attachments/assets/78f48336-6f15-4c88-9d06-ed12d809b83f
+https://github.com/user-attachments/assets/4adbc55e-ff60-4b0e-aa5f-58a6c7879c15
 
-> *This video demonstrates the process of adding a worker to the website. A worker can only be added to the portal after they have logging into the system as a user, where they are then promoted to the worker role.*
+> *This video demonstrates the process of adding a worker to the website. A worker can only be added to the portal after they have logged into the system as a user, where they are then promoted to the worker role.*
 
 <ins>4. Items and Category Page </ins>
 
-### **Note:** The following video contains *audio commentary* explaining the features and functionality. Please unmute the video for a complete understanding.
+### **Note:** The following video contains *audio commentary* explaining the features and functionality. 
+### Please unmute the video for a complete understanding.
 
-https://github.com/user-attachments/assets/266d8afe-762f-4a93-8d82-f03c817c977a
+https://github.com/user-attachments/assets/da134ef9-f5b9-4a15-b1d4-061da77f0f66
 
-> *This video demonstartes how Categories are added or removed in the merchant side, and items under the categories get added.*
+> *This video demonstrates how Categories are added or removed on the merchant side, and items under the categories get added.*
 
 ## Central State Management
 
